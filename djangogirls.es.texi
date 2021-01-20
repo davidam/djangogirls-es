@@ -284,6 +284,219 @@ debería ir bien.
 Por favor, instala Python normalmente de la siguiente forma, incluso
 si tienes Anaconda instalada en el ordenador.
 
+@subsection Instalar Python: Windows
+
+Primero comprueba si tu ordenador ejecuta la versión 32 bits de
+Windows o la de 64, en "Tipo de sistema" en la p@'agina de "Acerca
+de". Para llegar a esta p@'agina, intenta uno de estos m@'etodos:
+
+@itemize @bullet
+@item
+Presiona la tecla de Windows y la tecla Pause/Break al mismo tiempo
+
+@item
+Abre el Panel de Control desde el menú de Windows, después accede a
+Sistema & y Seguridad, luego a Sistema
+
+@item
+Presiona el botón de Windows, luego accede a Configuración > Sistema >
+Acerca de
+
+@end itemize
+
+Puedes descargar Python para Windows desde la siguiente web
+@uref{https://www.python.org/downloads/windows/}. Clica en el enlace
+"Latest Python 3 Release -Python x.x.x". Si tu ordenador ejecuta la
+versión de 64 bits de Windows, descarga Windows x86-64 executable
+installer. De lo contrario, descarga Windows x86 executable
+installer. Después de descargar el instalador, deberías ejecutarlo
+(dándole doble click) y seguir las instrucciones.
+
+Una cosa para tener en cuenta: Durante la instalación, verás una
+ventana de "Setup". Asegúrate de marcar las casillas "Add Python 3.6
+to PATH" o "Add Python to your environment variables" y hacer click en
+"Install Now", como se muestra aquí (puede que se vea un poco
+diferente si estás instalando una versión diferente):
+
+Cuando la instalación se complete, verás un cuadro de diálogo con un
+enlace que puedes seguir para saber más sobre Python o sobre la
+versión que has instalado. Cierra o cancela ese dialogo -- ¡Aprenderás
+más en ese tutorial!
+
+Nota: si estás usando una versión anterior de Windows (7, Vista o
+cualquier versión anterior) y el instalador de la versión 3.6.x de
+Python falla con un error, intenta también:
+
+@itemize @bullet
+@item
+instalar todas las actualizaciones de Windows e intenta instalar
+Python de nuevo; o
+
+@item
+instalar una versi@'on de
+@url{https://www.python.org/downloads/windows/, Python anterior}, por
+ejemplo, @url{https://www.python.org/downloads/release/python-346/,
+3.4.6}.
+
+@end itemize
+
+Nota Antes de instalar Python en OS X, debes asegurarte de que la
+configuración del Mac permita instalar paquetes que no estén en la App
+Store. ve a preferencias del sistema (System Preferences, está en la
+carpeta Aplicaciones), da click en "Seguridad y privacidad" (Security
+& Privacy) y luego la pestaña "General". Si tu "Permitir aplicaciones
+descargadas desde:" (Allow apps downloaded from:) está establecida a
+"Mac App Store," cambia a "Mac App Store y desarrolladores
+identificados." (Mac App Store and identified developers)
+
+Necesitas ir a la página web
+@url{https://www.python.org/downloads/release/python-361/} y descargar
+el instalador de Python:
+
+@itemize @bullet
+@item
+Descarga el archivo Mac OS X 64-bit/32-bit installer,
+
+@item
+Doble click en python-3.6.1-macosx10.6.pkg para ejecutar el instalador.
+
+@end itemize
+
+@subsection Instalar Python: Linux
+
+Es muy posible que ya tengas instalado Python de serie. Para verificar
+que ya lo tienes instalado (y qu@'e versi@'on es), abre una consola y
+escribe el siguiente comando:
+
+@example
+$ python3 --version
+Python 3.6.1
+@end example
+
+Si tienes instalada una versi@'on diferente de Python, al menos 3.4.0
+(por ejemplo 3.6.0), entonces no tienes que actualizar. Si tu no has
+instalado Python, o si tu quieres una versi@'on diferente, primero
+verifica que distribuci@'on de Linux est@'as usando con el siguiente
+comando:
+
+@example
+$ grep ^NOMBRE= /etc/os-release
+@end example
+
+Despu@'es, dependiendo de el resultado, sigue una de las siguientes
+gu@'{@dotless{i}}as de instalaci@'on bajo @'esta secci@'on.
+
+@subsection Instalar Python: Debian o Ubuntu
+
+Escribe este comando en tu consola:
+
+@example
+$ sudo apt install python3
+@end example
+
+@subsection Instalar Python: Fedora
+
+Usa este comando en tu consola:
+
+@example
+$ sudo dnf install python3
+@end example
+
+Si estás en versiones antiguas de Fedora, puedes obtener un error que
+el comando dnf no se encuentra. En ese caso, necesitas usar yum en su
+lugar.
+
+@subsection Instalar Python: openSUSE
+
+Verifica si la instalación fue exitosa abriendo una terminal o
+consola, y corriendo el comando python3:
+
+@example
+$ python3 --version
+Python 3.6.1
+@end example
+
+La versión mostrada puede ser diferente desde 3.6.1 -- debería marcar
+la versión que instalaste.
+
+NOTA: Si está en Windows y recibe un mensaje de error que indica que
+python3 no se encontró, intente usar python (sin el 3) y compruebe si
+todavía podría ser una versión de Python que sea 3.4.0 o superior. Si
+eso tampoco funciona, puede abrir un nuevo símbolo del sistema e
+intentar nuevamente; Esto sucede si usa un símbolo del sistema abierto
+antes de la instalación de Python.
+
+Si tienes alguna duda, o si ocurrió algún error y no tienes idea sobre
+qué hacer, ¡por favor pregunta a tu entrenador! Algunas veces las
+cosas no van bien y es mejor pedir ayuda a alguien con más
+experiencia.
+
+@subsection Instala un Editor de Código
+
+Hay muchos editores diferentes y la elección es principalmente una
+cuestión de preferencia personal. La mayoría de programadores de
+Python usan IDEs (Entornos de Desarrollo Integrados) complejos pero
+muy potentes, como PyCharm. Sin embargo, como principiante,
+probablemente no es lo más aconsejable; nuestras recomendaciones son
+igualmente potentes pero mucho más simples.
+
+Abajo presentamos nuestras sugerencias pero también puedes preguntarle
+a tu mentora cuáles son las suyas -será más fácil que te ayude.
+
+@subsection Visual Studio Code
+
+Visual Studio Code es un recurso de edición de código desarrollado por
+Microsoft para Windows, Linux y macOS. Esto incluye soporte para
+depuración, control de Git incrustado, sintaxis destacada,
+completación de código inteligente, fragmentos y refactorización de
+código.
+
+@subsection Gedit
+
+Gedit es un editor gratuito de código abierto, disponible para todos
+los sistemas operativos.
+
+@subsection Sublime Text
+
+Sublime Text es un editor muy popular con un periodo de prueba gratis,
+y está disponible para todos los sistemas operativos.
+
+@subsection Atom
+
+Atom es otro editor popular. Es gratis, de código abierto y disponible
+para Windows, OS X and Linux. Atom está desarrollado por Github.
+
+@section ¿Por qué estamos instalando un editor de código?
+
+Tú podrías estar preguntándote por qué estamos instalando este
+especializado software editor de código en vez de usar algo como Word
+o Notepad.
+
+La primera razón es que el código necesita ser texto plano, y el
+problema con programas como Word y Textedit es que no producen texto
+plano, sino texto enriquecido (con fuentes y formatos), usando
+formatos personalizados como RTF ( Formato del Texto Enriquecido, del
+inglés Rich Text Format).
+
+La segunda razón es que los editores de código están especializados
+para esta función, así ellos pueden proveer ayuda a características
+como destacar código con color acorde a su significado, o
+automáticamente cerrando etiquetas para ti.
+
+Veremos todo esto en acción más adelante. Pronto pensarás en convertir
+el editor de código en una de tus herramientas favoritas. :)
+
+@section Configura el entorno virtual (virtualenv) e instala Django
+
+Parte de esta sección está basada en tutoriales por
+@url{https://github.com/ggcarrots/django-carrots, Geek Girls Carrots}
+
+Parte de este capítulo está basada en el django-marcador tutorial bajo
+la licencia Creative Commons Attribution-ShareAlike 4.0
+internacional. El tutorial de django-marcador tiene derechos de autor
+de Markus Zapke-Gündemann et al.
+
+
 
 @node Index
 @unnumbered Index
