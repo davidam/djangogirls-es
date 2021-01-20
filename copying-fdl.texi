@@ -1,0 +1,8 @@
+@copying
+Tutorial de Django Girls (version @value{VERSION}, @value{UPDATED}).
+
+Copyright @copyright{} 2021 David Arroyo Men@'endez
+
+Este documento est@'a bajo una @uref{http://creativecommons.org/licenses/by-sa/3.0/es/deed.es, Licencia Creative Commons Atribución Compartir por Igual 3.0 España}
+
+@end copying

@@ -1,0 +1,133 @@
+\input texinfo   @c -*-texinfo-*-
+@comment $Id@w{$}
+@comment %**start of header
+@include version.texi
+@settitle Tutorial de Django Girls @value{VERSION}
+@syncodeindex pg cp
+@comment %**end of header
+@include copying-fdl.texi
+
+@titlepage
+@title Tutorial de Django Girls
+@subtitle para la versi@'on @value{VERSION}, @value{UPDATED}
+@author Django Girls
+@author Revisado por David Arroyo Men@'endez (@email{davidam@@gmail.com})
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+@contents
+
+@ifnottex
+@node Arriba
+@top Tutorial de Django Girls
+
+Este manual es para Damegender (version @value{VERSION}, @value{UPDATED}).
+@end ifnottex
+
+@menu
+* Introducci@'on::
+* Instalaci@'on::
+* C@'omo funciona Internet::
+* Introducci@'on a la l@'{@dotless{i}}nea de comandos::
+* Instalaci@'on de Python::
+* Editor de C@'odigo::
+* Introducci@'on a Python::
+* ¿Qué es Django?::
+* Instalaci@'on de Django::
+* ¡Tu primer proyecto en Django!::
+* Modelos en Django::
+* Administrador de Django::
+* ¡Despliega!::
+* URLs en Django::
+* Vistas en Django - ¡Hora de crear!::
+* Introducci@'on a HTML::
+* ORM de Django (QuerySets)::
+* Datos dinámicos en las plantillas::
+* Plantillas de Django::
+* CSS - ¡Qué quede bonito!::
+* Extendiendo plantillas::
+* Amplia tu aplicaci@'on::
+* Formularios de Django::
+* ¿Y ahora qu@'e?::
+* Licencia::
+* Photos::
+* Index::
+
+
+@end menu
+
+@node Introducci@'on
+@chapter Introducci@'on
+@cindex Introducci@'on
+
+@section Bienvenida/o
+
+¡Bienvenido/a al tutorial de las Django Girls! ¡Nos alegra que estés
+aquí :) En este tutorial, te llevaremos de viaje a las entrañas de la
+tecnología web, para que veas todas las piezas que se necesitan para
+que la web funcione.
+
+Como pasa con todas las cosas nuevas, va a ser una aventura - pero no
+te preocupes; una vez que te has decidido a empezar, te irá de
+maravilla :)
+
+@section Introducci@'on
+
+¿Alguna vez has tenido la sensación de que el mundo es cada vez más
+tecnológico? ¿que cada vez lo entiendes menos? ¿Alguna vez te has
+planteado crear un sitio web pero no sabías por dónde empezar? ¿Has
+pensado alguna vez que el mundo del software es demasiado complicado
+como para intentar hacer algo por tu cuenta?
+
+Bueno, ¡tenemos buenas noticias! Programar no es tan difícil como
+parece y queremos demostrarte lo divertido que puede llegar a ser.
+
+Este tutorial no te convertirá en programadora de la noche a la
+mañana. Si quieres ser buena en esto, necesitarás meses o incluso años
+de aprendizaje y práctica. Sin embargo queremos enseñarte que
+programar o crear sitios web no es tan complicado como
+parece. Intentaremos explicar las cosas lo mejor que podamos, para
+perderle el miedo a la tecnología.
+
+¡Esperamos conseguir que te guste la tecnología tanto como a nosotras!
+
+@section ¿Qué aprenderás con este tutorial?
+
+Cuando termines el tutorial, tendrás una aplicación web sencilla y
+funcional: tu propio blog. Te mostraremos como ponerla en línea, ¡para
+que otros puedan ver tu trabajo!
+
+Tendrá (más o menos) esta pinta:
+
+@image{images/application,6in,,Django Girls Blog}
+
+Si estás siguiendo este tutorial por tu cuenta y no tienes un mentor
+que te ayude en caso de dificultades, tenemos un chat para ti:
+Gitter. ¡Hemos pedido a mentores y asistentes de ediciones anteriores,
+que pasen por allí de vez en cuando para echar una mano a otras con el
+tutorial! ¡No tengas miedo de preguntar ahí!
+
+@section Seguir el tutorial desde casa
+
+Participar en un taller de Django Girls en vivo es genial, pero somos
+conscientes de que no siempre es posible hacerlo. Por eso, te
+recomendamos hacer este tutorial en casa. Para las que estáis en casa,
+estamos preparando vídeos que facilitarán seguir el tutorial por tu
+cuenta. Todavía está en progreso, pero cada vez hay más cosas
+explicadas en el canal de YouTube Coding is for girls (Nota: en
+inglés).
+
+En cada capítulo hay un enlace que lleva al vídeo correspondiente (si
+lo hay).
+
+@uref{ftp://ftp.gnu.org/gnu, GNU ftp site}
+
+
+
+@node Index
+@unnumbered Index
+@printindex cp
+
+@bye
