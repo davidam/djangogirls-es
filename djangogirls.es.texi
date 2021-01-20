@@ -602,6 +602,107 @@ veces a él!
     sudo apt install python3.6-venv
 @end verbatim
 
+@section Trabajar con virtualenv
+
+El comando anterior creará un directorio llamado myvenv (o cualquier
+nombre que hayas elegido) que contiene nuestro entorno virtual
+(básicamente un montón de archivos y carpetas).
+
+@subsection Working with virtualenv: Windows
+
+Inicia el entorno virtual ejecutando:
+
+@verbatim
+C:\Users\Name\djangogirls> myvenv\Scripts\activate
+
+    Nota: en 10 de Windows puedes obtener un error en Windows PowerShell que dice execution of scripts is disabled on this system. En este caso, abre otro Windows PowerShell con la opción "Ejecutar como administrador". Luego intenta escribir el siguiente comando antes de inicializar tu entorno virtual:
+
+    command-line
+
+    C:\WINDOWS\system32 > Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
+       Execution Policy Change
+       The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose you to the security risks described in the about_Execution_Policies help topic at http://go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy? [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): A
+
+    NOTA: Para usuarios del popular editor VS Code, el cual viene con una terminal integrada basada en el poweshell de windows; si deseas añadir la terminal integrada, puedes arrancar el siguiente comando para activar tu entorno virtual:
+
+    $ . myvenv\Scripts\activate.ps1
+
+    La ventaja es que no tienes que cambiar las ventanas entre el editor de código y la línea de comandos.
+@end verbatim
+
+@subsection Working with virtualenv: Linux and OS X
+
+Inicia el entorno virtual ejecutando:
+
+@example
+$ source myvenv/bin/activate
+@end example
+
+¡Recuerda reemplazar myvenv con tu nombre de virtualenv que hayas
+elegido!
+
+@verbatim
+    NOTA: a veces source podría no estar disponible. En ese caso trata hacerlo de esta forma:
+
+    command-line
+
+    $ . myvenv/bin/activate
+@end verbatim
+
+Sabrás que tienes virtualenv iniciado cuando veas que la línea de
+comando en tu consola tiene el prefijo (myvenv).
+
+Cuando trabajes en un entorno virtual, python automáticamente se
+referirá a la versión correcta, de modo que puedes utilizar python en
+vez de python3.
+
+Ok, tenemos todas las dependencias importantes en su
+lugar. ¡Finalmente podemos instalar Django!
+
+@subsection Instalar Django
+
+Ahora que tienes tu virtualenv iniciado, puedes instalar Django.
+
+Antes de hacer eso, debemos asegurarnos que tenemos la última versión
+de pip, el software que utilizamos para instalar Django:
+
+@example
+(myvenv) ~$ python -m pip install --upgrade pip
+@end example
+
+@subsection Instalar paquetes con un fichero de requisitos (requirements)
+
+Un fichero de requisitos (requirements) tiene una lista de
+dependencias que se deben instalar mediante pip.
+
+Primero crea un archivo requirements.txt dentro de tu directorio
+djangogirls, usando el editor de código que instalaste previamente. Lo
+puedes hacer mediante abriendo un nuevo archivo en el editor de código
+y guardándolo como requirements.txt en el directorio djangogirls. Tu
+directorio se verá así:
+
+@verbatim
+djangogirls
+└───requirements.txt
+@end verbatim
+
+Dentro del fichero djangogirls/requirements.txt deberías tener el
+siguiente texto:
+
+@verbatim
+Django~=2.2.4
+@end verbatim
+
+Ahora, ejecuta pip install -r requirements.txt para instalar Django.
+
+@verbatim
+(myvenv) ~$ pip install -r requirements.txt
+Collecting Django~=2.2.4 (from -r requirements.txt (line 1))
+  Downloading Django-2.2.4-py3-none-any.whl (7.1MB)
+Installing collected packages: Django
+Successfully installed Django-2.2.4
+@end verbatim
+
 
 
 @node Index
