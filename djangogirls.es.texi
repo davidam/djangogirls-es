@@ -10,6 +10,9 @@
 @titlepage
 @title Tutorial de Django Girls
 @subtitle para la versi@'on @value{VERSION}, @value{UPDATED}
+@documentencoding UTF-8
+@documentlanguage es
+
 @author Django Girls
 @author Revisado por David Arroyo Men@'endez (@email{davidam@@gmail.com})
 @page
@@ -23,7 +26,7 @@
 @node Arriba
 @top Tutorial de Django Girls
 
-Este manual es para Damegender (version @value{VERSION}, @value{UPDATED}).
+Este manual es acerca de Django (version @value{VERSION}, @value{UPDATED}).
 @end ifnottex
 
 @menu
@@ -62,27 +65,28 @@ Este manual es para Damegender (version @value{VERSION}, @value{UPDATED}).
 @chapter Introducci@'on
 @cindex Introducci@'on
 
-@section Bienvenida/o
+@section Bienvenida
 
-¡Bienvenido/a al tutorial de las Django Girls! ¡Nos alegra que estés
-aquí :) En este tutorial, te llevaremos de viaje a las entrañas de la
-tecnología web, para que veas todas las piezas que se necesitan para
-que la web funcione.
+¡Bienvenido/a al tutorial de las Django Girls! ¡Nos alegra que est@'es
+aqu@'{@dotless{i}} :) En este tutorial, te llevaremos de viaje a las
+entrañas de la tecnolog@'{@dotless{i}}a web, para que veas todas las
+piezas que se necesitan para que la web funcione.
 
 Como pasa con todas las cosas nuevas, va a ser una aventura - pero no
-te preocupes; una vez que te has decidido a empezar, te irá de
+te preocupes; una vez que te has decidido a empezar, te ir@'a de
 maravilla :)
 
 @section Introducci@'on
 
-¿Alguna vez has tenido la sensación de que el mundo es cada vez más
-tecnológico? ¿que cada vez lo entiendes menos? ¿Alguna vez te has
-planteado crear un sitio web pero no sabías por dónde empezar? ¿Has
-pensado alguna vez que el mundo del software es demasiado complicado
-como para intentar hacer algo por tu cuenta?
+¿Alguna vez has tenido la sensaci@'on de que el mundo es cada vez
+m@'as tecnol@'ogico? ¿que cada vez lo entiendes menos? ¿Alguna vez te
+has planteado crear un sitio web pero no sab@'{@dotless{i}}as por
+d@'onde empezar? ¿Has pensado alguna vez que el mundo del software es
+demasiado complicado como para intentar hacer algo por tu cuenta?
 
-Bueno, ¡tenemos buenas noticias! Programar no es tan difícil como
-parece y queremos demostrarte lo divertido que puede llegar a ser.
+Bueno, ¡tenemos buenas noticias! Programar no es tan
+dif@'{@dotless{i}}cil como parece y queremos demostrarte lo divertido
+que puede llegar a ser.
 
 Este tutorial no te convertirá en programadora de la noche a la
 mañana. Si quieres ser buena en esto, necesitarás meses o incluso años
@@ -95,35 +99,190 @@ perderle el miedo a la tecnología.
 
 @section ¿Qué aprenderás con este tutorial?
 
-Cuando termines el tutorial, tendrás una aplicación web sencilla y
-funcional: tu propio blog. Te mostraremos como ponerla en línea, ¡para
-que otros puedan ver tu trabajo!
+Cuando termines el tutorial, tendr@'as una aplicaci@'on web sencilla y
+funcional: tu propio blog. Te mostraremos como ponerla en
+l@'{@dotless{i}}nea, ¡para que otros puedan ver tu trabajo!
 
-Tendrá (más o menos) esta pinta:
+Tendr@'a (m@'as o menos) esta pinta:
 
 @image{images/application,6in,,Django Girls Blog}
 
 Si estás siguiendo este tutorial por tu cuenta y no tienes un mentor
 que te ayude en caso de dificultades, tenemos un chat para ti:
 Gitter. ¡Hemos pedido a mentores y asistentes de ediciones anteriores,
-que pasen por allí de vez en cuando para echar una mano a otras con el
-tutorial! ¡No tengas miedo de preguntar ahí!
+que pasen por all@'{@dotless{i}} de vez en cuando para echar una mano
+a otras con el tutorial! ¡No tengas miedo de preguntar
+ah@'{@dotless{i}}!
+
+Si estás siguiendo este tutorial por tu cuenta y no tienes un mentor
+que te ayude en caso de dificultades, tenemos un chat para ti:
+@url{https://gitter.im/DjangoGirls/tutorial, Gitter}. ¡Hemos pedido a
+mentores y asistentes de ediciones anteriores, que pasen por allí de
+vez en cuando para echar una mano a otras con el tutorial! ¡No tengas
+miedo de preguntar ahí!
 
 @section Seguir el tutorial desde casa
 
 Participar en un taller de Django Girls en vivo es genial, pero somos
 conscientes de que no siempre es posible hacerlo. Por eso, te
-recomendamos hacer este tutorial en casa. Para las que estáis en casa,
-estamos preparando vídeos que facilitarán seguir el tutorial por tu
-cuenta. Todavía está en progreso, pero cada vez hay más cosas
-explicadas en el canal de YouTube Coding is for girls (Nota: en
-inglés).
+recomendamos hacer este tutorial en casa. Para las que est@'ais en
+casa, estamos preparando v@'{@dotless{i}}deos que facilitar@'an seguir
+el tutorial por tu cuenta. Todav@'{@dotless{i}}a est@'a en progreso,
+pero cada vez hay m@'as cosas explicadas en el canal de YouTube
+@uref{https://www.youtube.com/channel/UC0hNd2uW8jTR5K3KBzRuG2A/feed,
+Coding is for girls} (Nota: en inglés).
 
-En cada capítulo hay un enlace que lleva al vídeo correspondiente (si
-lo hay).
+En cada cap@'{@dotless{i}}tulo hay un enlace que lleva al
+v@'{@dotless{i}}deo correspondiente (si lo hay).
 
-@uref{ftp://ftp.gnu.org/gnu, GNU ftp site}
+@section Sobre nosotras y C@'omo contribuir
 
+Este tutorial lo mantiene @uref{https://djangogirls.org/,
+DjangoGirls}. Si encuentras algún error o quieres actualizar el
+tutorial, por favor
+@uref{https://github.com/DjangoGirls/tutorial/blob/master/README.md,
+sigue la gu@'{@dotless{i}}a de c@'omo contribuir}
+
+@section ¿Te gustaría ayudarnos a traducir el tutorial a otros idiomas?
+
+Actualmente, las traducciones se hacen en la plataforma crowdin.com,
+en el siguiente enlace:
+
+@uref{https://crowdin.com/project/django-girls-tutorial}
+
+Si tu idioma no aparece en la lista de crowdin, por favor abre un
+nuevo issue con el idioma para que podamos añadirlo.
+
+@node Instalaci@'on
+@chapter Instalaci@'on
+@cindex Instalaci@'on
+
+@section Si est@'as haciendo el tutorial en casa
+
+Si estás haciendo el tutorial en casa, y no en uno de los eventos de
+Django Girls, puedes saltar este capítulo por completo e ir
+directamente al capítulo ¿cómo funciona Internet?.
+
+Esto es porque cubrimos las instalaciones de cosas a medida que se
+requieran en el tutorial -- esta es solamente una página adicional que
+reúne toda la información de instalación en un solo lugar (lo que es
+útil para algunos formatos de taller). Puedes escoger instalar todo lo
+que está en esta página ya mismo si lo deseas. Pero si quieres empezar
+a aprender cosas antes de instalar un grupo de materiales en tu
+computadora, salta este capítulo y te explicaremos las partes de la
+instalación luego, cuando sean necesarias.
+
+¡Buena suerte!
+
+@section Si est@'as asistiendo a un workshop
+
+Si estás asistiendo a uno de los Django Girls events:
+
+Tu workshop puede tener una "fiesta de instalación" antes del workshop
+principal. Si estás en un equipo de instalación, ¡ésta página es para
+ti! Sigue las instrucciones aquí para obtener todo lo que tu necesitas
+para el workshop de instalación, con la ayuda de los entrenadores si
+lo necesitas. Entonces en el workshop principal, tu estarás preparado
+para saltar las instrucciones de instalación que encontrarás en el
+tutorial principal cuando llegues a ellos.
+
+Los organizadores del taller pueden pedirte que en casa intentes
+instalar todo en tu computadora antes de iniciar el taller. Si has
+estado preguntando cómo hacer esto, ¡esta página es para ti! Sigue las
+instrucciones aquí, lo mejor puedas. Así, en el taller principal,
+cuando estés en uno de los pasos de la instalación del tutorial, y si
+no tenías esa pieza instalada, puedes pedir ayuda a una de tus
+entrenadoras.
+
+Si tu taller no tiene una sesión de instalación (o no pudiste
+asistir), y si los organizadores no te piden que intentes instalar
+todo antes de tu llegada, salta esta página y ve al capítulo Cómo el
+internet funciona. Instalarás todo lo que necesitas para trabajar a lo
+largo del tutorial.
+
+@section Instalaci@'on
+
+En este tutorial vas a construir un blog. Según cómo vayas a través
+del tutorial, serás instruida en cómo instalar varios softwares en tu
+computadora y configurar algunas cuentas online como sean
+necesarias. Esta página reune todas las instalaciones e instrucciones
+del registro en un lugar (el cual es útil para algunos formatos del
+taller).
+
+@section Breve introducci@'on a la l@'{@dotless{i}}nea de comandos
+
+Muchos de los pasos citados abajo hacen referencia a la "consola",
+"terminal", "ventana de comandos", o "línea de comandos" -- todos
+éstos términos significan la misma cosa: una ventana en tu computadora
+donde puedes introducir comandos. Cuando estés en el tutorial
+principal, aprenderás más acerca de la línea de comandos. Por ahora,
+la parte principal que necesitas es saber cómo abrir una ventana de
+comandos y cómo luce:
+
+@subsection Abriendo: Windows
+
+Dependiendo de tu versión de Windows y tu teclado, una de las opciones
+siguientes debería abrir una ventana de comandos (puede que necesites
+experimentar un poco, pero no se necesita probar todas estas
+sugerencias):
+
+Ve al menú o pantalla de Inicio, y escribe "Símbolo del Sistema" en el
+cuadro de búsqueda.
+Ve a Menú de inicio → Windows System → Command Prompt.
+Ve al menú de Inicio → Todos los Programas → Accessorios → Símbolo del
+Sistema.
+
+Ve a la pantalla de Inicio, pasa el rat@'on sobre la esquina inferior
+izquierda de la pantalla, y haz click en la flecha hacia abajo (en una
+pantalla t@'actil, desliza hacia arriba desde la parte baja de la
+pantalla). La p@'agina de la Aplicaci@'on debería abrirse. Haz click
+en S@'{@dotless{i}}mbolo del Sistema en la secci@'on Sistema de
+Windows.
+
+Mant@'en la tecla especial de Windows de tu teclado y pulsa "X". Elige
+"S@'{@dotless{i}}mbolo del Sistema" del men@'u emergente.
+
+Mant@'en pulsada la tecla de Windows y pulsa "R" para abrir una ventana
+"Ejecutar". Escribe "cmd" en la caja, y haz click en OK.
+
+@image{images/windows-plus-r,6in,,Windows Commands}
+
+M@'as adelante en este tutorial, necesitar@'as tener dos consolas de
+comandos abiertas a la misma vez. Sin embargo, en algunas versiones de
+Windows, si ya tienes abierta una ventana de comandos e intentas abrir
+otra usando el mismo m@'etodo, simplemente maximizar@'a la que ya
+tienes abierta. ¡Int@'entalo ahora en tu ordenador y mira qu@'e
+ocurre! Si solo se abre una ventana de comandos, intenta alguno de los
+otros m@'etodos explicados anteriormente. Al menos uno de ellos
+deber@'{@dotless{i}}a abrir una nueva ventana de comandos.
+
+@subsection Abriendo: OS X
+
+Ve a Aplicaciones → Utilidades → Terminal.
+
+@subsection Abriendo: Linux
+
+Probablemente se encuentre en Aplicaciones → Accesorios → Terminal, o
+Aplicaciones → Sistema → Terminal, aunque esto dependerá de tu
+sistema. Si no lo encuentras allí, intenta buscarlo en Google. :)
+
+@section Instalar Python
+
+Para lectores en casa: este capitulo se cubre en el vídeo
+@uref{https://www.youtube.com/watch?v=pVTaqzKZCdA, Installing Python &
+Code Editor.}
+
+Esta sección está basada en un tutorial de
+@uref{https://github.com/ggcarrots/django-carrots, Geek Girls Carrots}
+
+Django está escrito en Python. Necesitamos Python para hacer cualquier
+cosa en Django. ¡Empecemos con instalarlo! Queremos que instales la
+última versión de Python 3, así que si tienes una versión anterior,
+necesitarás actualizarla. Si ya tienes la versión 3.4 o una superior,
+debería ir bien.
+
+Por favor, instala Python normalmente de la siguiente forma, incluso
+si tienes Anaconda instalada en el ordenador.
 
 
 @node Index
