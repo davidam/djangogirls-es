@@ -5,7 +5,7 @@
 @settitle Tutorial de Django Girls @value{VERSION}
 @syncodeindex pg cp
 @comment %**end of header
-@include copying-fdl.texi
+@include copying-cc.texi
 
 @titlepage
 @title Tutorial de Django Girls
@@ -340,7 +340,7 @@ ejemplo, @url{https://www.python.org/downloads/release/python-346/,
 
 @end itemize
 
-Nota Antes de instalar Python en OS X, debes asegurarte de que la
+Nota: Antes de instalar Python en OS X, debes asegurarte de que la
 configuración del Mac permita instalar paquetes que no estén en la App
 Store. ve a preferencias del sistema (System Preferences, está en la
 carpeta Aplicaciones), da click en "Seguridad y privacidad" (Security
@@ -537,7 +537,7 @@ formato:
 $ python3 -m venv myvenv
 @end example
 
-@subsection Virtual environment: Windows
+@subsection Entorno Virtual: Windows
 
 Para crear un nuevo virtualenv, necesitas abrir una terminal "command
 prompt" y ejecutar
@@ -557,7 +557,7 @@ otro nombre, pero asegúrate de usar minúsculas y no usar espacios,
 acentos o caracteres especiales. También es una buena idea mantener el
 nombre corto. ¡Vas utilizarlo muchas vecesl!
 
-@subsection Virtual environment: Linux and OS X
+@subsection Entorno Virtual: Linux and OS X
 
 Podemos crear un virtualenv en Linux y OS X, es tan sencillo como
 ejecutar
@@ -621,7 +621,7 @@ El comando anterior creará un directorio llamado myvenv (o cualquier
 nombre que hayas elegido) que contiene nuestro entorno virtual
 (básicamente un montón de archivos y carpetas).
 
-@subsection Working with virtualenv: Windows
+@subsection Trabajando con virtualenv: Windows
 
 Inicia el entorno virtual ejecutando:
 
@@ -656,7 +656,7 @@ C:\Users\Name\djangogirls> myvenv\Scripts\activate
     editor de código y la línea de comandos.
 @end verbatim
 
-@subsection Working with virtualenv: Linux and OS X
+@subsection Trabajando con virtualenv: Linux and OS X
 
 Inicia el entorno virtual ejecutando:
 
@@ -729,7 +729,7 @@ Installing collected packages: Django
 Successfully installed Django-2.2.4
 @end verbatim
 
-@subsection{Installing Django: Windows}
+@subsection{Instalando Django: Windows}
 
 @verbatim
 Si obtienes un error cuando llamas al pip en la plataforma de Windows,
@@ -743,7 +743,7 @@ vez. (Moviendo el directorio virtualenv no funcionará debido a que usa
 rutas absolutas.)
 @end verbatim
 
-@subsection{Installing Django: Windows 8 and Windows 10}
+@subsection{Instalando Django: Windows 8 y Windows 10}
 
 @verbatim
 Tu línea de comando puede congelarse luego de intentar instalar Django. Si esto sucede, usa el siguiente comando:
@@ -751,7 +751,7 @@ Tu línea de comando puede congelarse luego de intentar instalar Django. Si esto
     C:\Users\Name\djangogirls> python -m pip install -r requirements.txt
 @end verbatim
 
-@subsection{Installing Django: Linux}
+@subsection{Instalando Django: Linux}
 
 Si obtienes un error cuando llamas pip en Ubuntu 12.04, por favor
 corre python -m pip install -U --force-reinstall pip para reparar la
@@ -1018,13 +1018,12 @@ console -consola- o terminal.
 Para empezar con algunos experimentos necesitarás abrir nuestra
 interfaz de línea de comandos en primer lugar.
 
-@subsection Opening: Windows
+@subsection Abriendo terminal: Windows
 
 Dependiendo de tu versión de Windows y tu teclado, una de las opciones
 siguientes debería abrir una ventana de comandos (puede que necesites
 experimentar un poco, pero no se necesita probar todas estas
 sugerencias):
-
 
 Ve al menú o pantalla de Inicio, y escribe "Símbolo del Sistema" en el
 cuadro de búsqueda.
@@ -1060,11 +1059,11 @@ se abre una ventana de comandos, intenta alguno de los otros métodos
 explicados anteriormente. Al menos uno de ellos debería abrir una
 nueva ventana de comandos.
 
-@subsection Opening: OS X
+@subsection Abriendo terminal: OS X
 
 Ve a Aplicaciones → Utilidades → Terminal.
 
-@subsection Opening: Linux
+@subsection Abriendo terminal: Linux
 
 Probablemente se encuentre en Aplicaciones → Accesorios → Terminal, o
 Aplicaciones → Sistema → Terminal, aunque esto dependerá de tu
