@@ -34,8 +34,6 @@ Este manual es acerca de Django (version @value{VERSION}, @value{UPDATED}).
 * Instalaci@'on::
 * C@'omo funciona Internet::
 * Introducci@'on a la l@'{@dotless{i}}nea de comandos::
-* Instalaci@'on de Python::
-* Editor de C@'odigo::
 * Introducci@'on a Python::
 * ¿Qué es Django?::
 * Instalaci@'on de Django::
@@ -1432,6 +1430,289 @@ para todos los sistemas operativos.
 @subsection ¿Lista? ¿Listo?
 
 ¡Vamos a bucear en Python!
+
+@node Introducción a Python
+@chapter Introducción a Python
+@cindex Introducción a Python
+
+Parte de este capítulo se basa en tutoriales de
+@url{https://github.com/ggcarrots/django-carrots, Geek Girls Carrots}.
+
+¡Escribamos algo de código!
+
+@section La Consola de Python
+
+Para los lectores en casa:
+@url{https://www.youtube.com/watch?v=MO63L4s-20U, el vídeo conceptos
+básicos de Python: enteros, cadenas, listas, variables y errores} cubre
+esta parte.
+
+Para empezar a jugar con Python, tenemos que abrir una línea de
+comandos en nuestra computadora. Deberías saber cómo hacerlo, pues lo
+aprendiste en el capítulo de
+@url{https://tutorial.djangogirls.org/es/intro_to_command_line/,
+Introducción a la Línea de Comandos}
+
+Una vez que estés lista, sigue las instrucciones a continuación.
+
+Queremos abrir una consola de Python, así que escribe python en
+Windows o python3 en Mac OS/Linux y pulsa intro.
+
+@example
+$ python3
+Python 3.6.1 (...)
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+@end example
+
+@section Tu primer comando Python
+
+Después de ejecutar el comando de Python, el cursor cambiará a
+>>>. Para nosotros esto significa que por ahora sólo podemos utilizar
+comandos del lenguaje Python. No tienes que escribir >>> pues Python
+lo hará por ti.
+
+Si deseas salir de la consola de Python en cualquier momento, solo
+escribe exit() o usa el atajo Ctrl + Z para Windows y Ctrl + D para
+Mac/Linux. Luego no verás más >>>.
+
+Por ahora, no queremos salir de la consola de Python. Deseamos
+aprender más sobre ella. Vamos a comenzar escribiendo algo de
+matemática, escribe 2 + 3 y oprime la tecla enter.
+
+@example
+>>> 2 + 3
+5
+@end example
+
+¡Qué bien! ¿Ves cómo salió la respuesta? ¡Python sabe matemática!
+Puedes probar otros comandos como:
+
+@example
+    4 * 5
+    5 - 1
+    40 / 2
+@end example
+
+Para realizar una operación exponencial, digamos 2 elevado al cubo,
+escribimos:
+
+@example
+>>> 2 ** 3
+8
+@end example
+
+Diviértete con esto por un momento y luego vuelve aquí. :)
+
+Como puedes ver, Python es una gran calculadora. Si te estás
+preguntando qué más puedes hacer ...
+
+@section Cadena de caracteres
+
+¿Qué tal tu nombre? Escribe tu nombre entre comillas, así:
+
+@example
+>>> "Ola"
+'Ola'
+@end example
+
+¡Has creado tu primera cadena de texto! La misma es una secuencia de
+caracteres que puede ser procesada por una computadora. La cadena de
+texto (o string, en inglés) debe comenzar y terminar con el mismo
+carácter. Pueden ser comillas simples (') o dobles (") (¡no hay
+ninguna diferencia!) Las comillas le dicen a Python que lo que está
+dentro de ellas es una cadena de texto.
+
+Las cadenas pueden estar concatenadas. Prueba esto:
+
+@example
+>>> "Hola " + "Ola"
+'Hola Ola'
+@end example
+
+También puedes multiplicar las cadenas por un número:
+
+@example
+>>> "Ola" * 3
+'OlaOlaOla'
+@end example
+
+Si necesitas poner un apóstrofe dentro de una cadena, hay dos formas
+de hacerlo.
+
+Usar comillas dobles:
+
+@example
+>>> "Runnin' down the hill"
+"Runnin' down the hill"
+@end example
+
+o escapar el apóstrofe con la diagonal inversa (``):
+
+@example
+>>> 'Runnin\' down the hill'
+"Runnin' down the hill"
+@end example
+
+Bien, ¿eh? Para ver tu nombre en letras mayúsculas, escribe:
+
+@example
+>>> "Ola".upper()
+'OLA'
+@end example
+
+¡Acabas de usar el método upper sobre tu cadena de texto! Un método
+(como upper()) es un conjunto de instrucciones que Python tiene que
+realizar sobre un objeto determinado ("Ola") una vez que se le invoca.
+
+Si quieres saber el número de letras que contiene tu nombre, ¡también
+hay una función para eso!
+
+@example
+>>> len("Ola")
+3
+@end example
+
+Te preguntarás ¿por qué a veces se invoca a las funciones con un . al
+final de una cadena (como "Ola".upper()) y a veces se invoca a la
+función colocando la cadena entre paréntesis? Bueno, en algunos casos
+las funciones pertenecen a los objetos, como upper(), que sólo puede
+ser utilizada sobre cadenas. En este caso, a la función le llamamos
+método. Otra veces, las funciones no pertenecen a ningún objeto
+específico y pueden ser usadas en diferentes objetos, como len(). Esta
+es la razón de por qué estamos pasando "Ola" como un parámetro a la
+función len.
+
+@section Resumen
+
+Ok, es suficiente sobre las cadenas. Hasta ahora has aprendido sobre:
+
+@itemize @bullet
+@item
+La terminal - teclear comandos (código) en la terminal de Python resulta en respuestas de Python
+@item
+Números y strings - en Python los números son usados para matemáticas
+y strings (cadenas de caracteres) para objetos de texto
+@item
+Operadores - como + y *, combinan valores para producir uno nuevo
+@item
+Funciones - como upper() y len(), ejecutan acciones sobre los objetos.
+@end itemize
+
+Estos son los conocimientos básicos que puedes aprender de cualquier
+lenguaje de programación. ¿Lista para algo más difícil? ¡Seguro que lo
+estás!
+
+@section Errores
+
+Vamos a intentar algo nuevo. ¿Podemos obtener la longitud de un número
+de la misma manera que pudimos averiguar la longitud de nuestro
+nombre? Escribe len(304023) y pulsa enter:
+
+@example
+>>> len(304023)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: object of type 'int' has no len()
+@end example
+
+¡Pues tenemos nuestro primer error! El icono de es nuestra manera de
+darte un aviso de que el código que estás ejecutando no funciona como
+se espera. ¡Cometer errores (incluso algunos intencionales) son una
+parte importante del aprendizaje!
+
+Dicho error dice que los objetos de tipo "int" (números enteros) no
+tienen longitud. ¿Qué podemos hacer ahora? ¿Quizás podamos escribir el
+número como una cadena? Las cadenas tienen longitud, ¿verdad?
+
+@example
+>>> len(str(304023))
+6
+@end example
+
+¡Funcionó! Hemos utilizado la función str dentro de la función
+len. str() convierte todo en cadenas de texto.
+
+@itemize @bullet
+@item
+La función str convierte cosas en cadenas, strings
+@item
+La función int convierte cosas en enteros, integers
+@end itemize
+
+Importante: podemos convertir números en texto, pero no necesariamente
+podemos convertir texto en números - ¿qué sería int('hello')?
+
+@section Variables
+
+Un concepto importante en la programación son las variables. Una
+variable no es más que un nombre para algo, de forma que puedas usarlo
+más tarde. Los programadores usan estas variables para almacenar
+datos, hacer su código más legible y para no tener que recordar qué es
+cada cosa.
+
+Supongamos que queremos crear una nueva variable llamada name:
+
+@example
+>>> name = "Ola"
+@end example
+
+Indicamos que el nombre es igual a Ola.
+
+Como habrás notado, tu programa no devolvió nada como lo hacía
+antes. Así que ¿cómo sabemos que la variable existe realmente? Escribe
+name y pulsa intro:
+
+@example
+>>> name
+'Ola'
+@end example
+
+¡Genial! ¡Tu primera variable :)! Siempre puedes cambiar a lo que se
+refiere:
+
+@example
+>>> name = "Sonja"
+>>> name
+'Sonja'
+@end example
+
+También puedes usarla dentro de funciones:
+
+@example
+>>> len(name)
+5
+@end example
+
+Increíble, ¿verdad? Por supuesto, las variables pueden ser cualquier
+cosa, ¡también números! Prueba esto:
+
+@example
+>>> a = 4
+>>> b = 6
+>>> a * b
+24
+@end example
+
+Pero ¿qué pasa si usamos el nombre equivocado? ¿Puedes adivinar qué
+pasaría? ¡Vamos a probar!
+
+@example
+>>> city = "Tokyo"
+>>> ctiy
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'ctiy' is not defined
+@end example
+
+¡Un error! Como puedes ver, Python tiene diferentes tipos de errores y
+este se llama NameError. Python te dará este error si intentas
+utilizar una variable que no ha sido definida aún. Si más adelante te
+encuentras con este error, verifica tu código para ver si no has
+escrito mal una variable.
+
+¡Juega con esto un rato y descubre qué puedes hacer!
+
 
 
 @node Index
