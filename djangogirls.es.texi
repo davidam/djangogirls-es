@@ -574,19 +574,32 @@ es una buena idea mantener el nombre corto. ¡Vas a referirte muchas
 veces a él!
 
 @verbatim
-    NOTA: En algunas versiones de Debian/Ubuntu, puede que obtengas el siguiente error:
+    NOTA: En algunas versiones de Debian/Ubuntu, puede que obtengas el
+    siguiente error:
 
-    The virtual environment was not created successfully because ensurepip is not available.  En sistemas Debian/Ubuntu, tendrás que instalar el paquete python3-venv usando el siguiente comando.
-       apt-get install python3-venv
-    Puede que tengas que usar sudo con este comando.  Después de instalar el paquete python3-venv, vuelve a crear tu entorno virtual.
+    The virtual environment was not created successfully because
+       ensurepip is not available.
 
-    En este caso, sigue las instrucciones anteriores e instala el paquete python3-venv:
+    En sistemas Debian/Ubuntu, tendrás que instalar el paquete
+    python3-venv usando el siguiente comando.
+
+    apt-get install python3-venv
+
+    Puede que tengas que usar sudo con este comando.
+    Después de instalar el paquete python3-venv, vuelve a crear tu
+    entorno virtual.
+
+    En este caso, sigue las instrucciones anteriores e instala el
+    paquete python3-venv:
 
     $ sudo apt install python3-venv
 
-    NOTA: En algunas versiones de Debian/Ubuntu inicializar el entorno virtual de esta manera da el siguiente error:
+    NOTA: En algunas versiones de Debian/Ubuntu inicializar el entorno
+    virtual de esta manera da el siguiente error:
 
-    Error: Command '['/home/eddie/Slask/tmp/venv/bin/python3', '-Im', 'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit status 1
+    Error: Command '['/home/eddie/Slask/tmp/venv/bin/python3', '-Im',
+    'ensurepip', '--upgrade', '--default-pip']' returned non-zero exit
+    status 1
 
     Para evitar esto, utiliza directamente el comando virtualenv.
 
@@ -615,19 +628,32 @@ Inicia el entorno virtual ejecutando:
 @verbatim
 C:\Users\Name\djangogirls> myvenv\Scripts\activate
 
-    Nota: en 10 de Windows puedes obtener un error en Windows PowerShell que dice execution of scripts is disabled on this system. En este caso, abre otro Windows PowerShell con la opción "Ejecutar como administrador". Luego intenta escribir el siguiente comando antes de inicializar tu entorno virtual:
+    Nota: en 10 de Windows puedes obtener un error en Windows
+    PowerShell que dice execution of scripts is disabled on this
+    system. En este caso, abre otro Windows PowerShell con la opción
+    "Ejecutar como administrador". Luego intenta escribir el siguiente
+    comando antes de inicializar tu entorno virtual:
 
-    command-line
+    C:\WINDOWS\system32 > Set-ExecutionPolicy -ExecutionPolicy
+       RemoteSigned Execution Policy Change The execution policy helps
+       protect you from scripts that you do not trust. Changing the
+       execution policy might expose you to the security risks
+       described in the about_Execution_Policies help topic at
+       http://go.microsoft.com/fwlink/?LinkID=135170.
 
-    C:\WINDOWS\system32 > Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
-       Execution Policy Change
-       The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose you to the security risks described in the about_Execution_Policies help topic at http://go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy? [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): A
+    Do you want to change the execution policy?
+    [Y] Yes [A] Yes to All [N] No [L]
+    No to All [S] Suspend [?] Help (default is "N"): A
 
-    NOTA: Para usuarios del popular editor VS Code, el cual viene con una terminal integrada basada en el poweshell de windows; si deseas añadir la terminal integrada, puedes arrancar el siguiente comando para activar tu entorno virtual:
+    NOTA: Para usuarios del popular editor VS Code, el cual viene con
+    una terminal integrada basada en el poweshell de windows; si
+    deseas añadir la terminal integrada, puedes arrancar el siguiente
+    comando para activar tu entorno virtual:
 
     $ . myvenv\Scripts\activate.ps1
 
-    La ventaja es que no tienes que cambiar las ventanas entre el editor de código y la línea de comandos.
+    La ventaja es que no tienes que cambiar las ventanas entre el
+    editor de código y la línea de comandos.
 @end verbatim
 
 @subsection Working with virtualenv: Linux and OS X
@@ -659,7 +685,7 @@ vez de python3.
 Ok, tenemos todas las dependencias importantes en su
 lugar. ¡Finalmente podemos instalar Django!
 
-@subsection Instalar Django
+@section Instalar Django
 
 Ahora que tienes tu virtualenv iniciado, puedes instalar Django.
 
@@ -703,6 +729,154 @@ Installing collected packages: Django
 Successfully installed Django-2.2.4
 @end verbatim
 
+@subsection{Installing Django: Windows}
+
+@verbatim
+Si obtienes un error cuando llamas al pip en la plataforma de Windows,
+por favor verifica si el nombre de ruta de tu proyecto contiene
+espacios, acentos o caracteres especiales (por ejemplo,
+C:\Usuarios\NombreUsuario\djangogirls). Si los tiene, utiliza otro en
+su lugar sin espacios, acentos o caracteres especiales (sugerencia:
+C:\djangogirls). Crea un nuevo virtualenv en el nuevo directorio,
+luego borra el viejo y trata de escribir el comando anterior otra
+vez. (Moviendo el directorio virtualenv no funcionará debido a que usa
+rutas absolutas.)
+@end verbatim
+
+@subsection{Installing Django: Windows 8 and Windows 10}
+
+@verbatim
+Tu línea de comando puede congelarse luego de intentar instalar Django. Si esto sucede, usa el siguiente comando:
+
+    C:\Users\Name\djangogirls> python -m pip install -r requirements.txt
+@end verbatim
+
+@subsection{Installing Django: Linux}
+
+Si obtienes un error cuando llamas pip en Ubuntu 12.04, por favor
+corre python -m pip install -U --force-reinstall pip para reparar la
+instalación de pip en el virtualenv.
+
+¡Eso es todo! Ahora estás lista (por fin) para crear una aplicación Django!
+
+@section{Instalar Git}
+
+Git es un "sistema de control de versiones" que utilizan muchos
+programadores. Este software puede seguir los cambios realizados en
+archivos a lo largo del tiempo de forma que más tarde puedas volver a
+cualquier versión anterior. Algo similar a la herramienta de "Control
+de Cambios" en los programas de tipo Word (por ejemplo, Microsoft Word
+o LibreOffice Writer), pero mucho más potente.
+
+@subsection{Installing Git: Windows}
+
+Puedes descargar Git desde @url{https://git-scm.com/}. Puedes hacer
+click en "Next" en todos los pasos excepto en dos: cuando se te
+pregunte que selecciones tu editor, selecciona Nano, y en el paso
+"adjusting your PATH environment", selecciona "Use Git and optional
+Unix tools from the Windows Command Prompt" (la última opción). Aparte
+de eso, los valores por defecto son correctos. "Checkout
+Windows-style, commit Unix-style line endings" tampoco necesita
+corrección.
+
+No olvides reiniciar el Símbolo del Sistema o el PowerShell una vez
+que la instalación se complete con éxito.
+
+@subsection{Installing Git: OS X}
+
+Descarga Git de @url{https://git-scm.com} y sigue las instrucciones.
+
+    Nota Si estas usando OS X 10.6, 10.7 o 10.8, tendrás que instalar
+    git desde aquí:
+    @url{https://sourceforge.net/projects/git-osx-installer/files/git-2.3.5-intel-universal-snow-leopard.dmg/download, Git installer for OS X Snow Leopard}
+
+@subsection{Installing Git: Debian or Ubuntu}
+
+@example
+$ sudo apt install git
+@end example
+
+@subsection{Installing Git: Fedora}
+
+@example
+$ sudo dnf install git
+@end example
+
+@subsection{Installing Git: openSUSE}
+
+@example
+$sudo zypper install git
+@end example
+
+@section{Crear una cuenta de GitHub}
+
+Ve a GitHub.com y regístrate con una nueva y gratuita cuenta de
+usuario. Asegúrate de recordar tu contraseña (añádela a tu gestor de
+contraseñas, si usas uno).
+
+@section{Crear una cuenta de PythonAnywhere}
+
+PythonAnywhere es un servicio para ejecutar código Python en
+servidores "en la nube". Lo vamos a usar para alojar nuestro sitio
+para que esté disponible en Internet.
+
+Almacenaremos del blog que estamos construyendo sobre Python
+Anywhere. Crea una cuenta como "Principiante/Beginner" en Python
+Anywhere (el modo gratuito está bien, no necesitas una tarjeta de
+crédito).
+
+@image{images/pythonanywhere_beginner_account_button,6in,,Plans and Pricing}
+
+@verbatim
+Nota Cuando elijas un nombre de usuario, recuerda que la URL de tu
+blog tendrá la forma tunombredeusuario.pythonanywhere.com, así que lo
+mejor será usar tu apodo o elegir un nombre que indique de qué trata
+tu blog. Asegúrate también de recordar tu contraseña (añádela a tu
+gestor de contraseñas, si usas uno).
+@end verbatim
+
+@subsection{Crear un token para la API de PythonAnywhere}
+
+Este paso solo necesita ser completado una vez. Una vez que te hayas
+registrado en PythonAnywhere, serás llevado a tu tablón
+principal. Encontrarás el enlace a la página de tu "Cuenta" en la
+esquina superior derecha:
+
+Enlace de cuenta en la parte superior derecha de la página
+
+Después selecciona la lengueta llamada "API token", y haz click en el
+botón que dice "Crear nueva API token"
+
+@image{images/pythonanywhere_create_api_token,6in,,Your API Token}
+
+@subsection{Comienza a leer}
+
+Felicitaciones, ¡tú tienes todo configurado y listo para avanzar! si
+aún tienes tiempo antes del taller, sería útil empezar a leer un poco
+de los capítulos iniciales:
+
+@itemize @bullet
+@item
+@url{https://tutorial.djangogirls.org/es/how_the_internet_works/, ¿C@'omo funciona Internet?}
+
+@item
+@url{https://tutorial.djangogirls.org/es/intro_to_command_line/,
+Introducci@'on a la l@'{@dotless{i}}nea de comandos}
+
+@item
+@url{https://tutorial.djangogirls.org/es/python_introduction/, Introducci@'on a Python}
+
+@item
+@url{https://tutorial.djangogirls.org/es/django/, ¿Qu@'e es Django?}
+
+@end itemize
+
+
+@subsection{¡Disfruta el taller!}
+
+Cuando comiences el taller, estarás habilitada para ir directamente a
+¡Tu primer proyecto en Django! porque ya cubriste el material en los
+capítulos anteriores.
 
 
 @node Index
