@@ -1713,6 +1713,416 @@ escrito mal una variable.
 
 ¡Juega con esto un rato y descubre qué puedes hacer!
 
+@section La función print
+
+Intenta esto:
+
+@example
+>>> name = 'Maria'
+>>> name
+'Maria'
+>>> print(name)
+Maria
+@end example
+
+Cuando sólo escribes name, el intérprete de Python responde con la
+representación en forma de cadena de la variable 'name', que son las
+letras M-a-r-i-a, rodeadas de comillas simples ''. Cuando dices
+print(name), Python va a "imprimir" el contenido de la variable a la
+pantalla, sin las comillas, que es más claro.
+
+Como veremos después, print() también es útil cuando queremos imprimir
+cosas desde adentro de las funciones, o cuando queremos imprimir cosas
+en múltiples líneas.
+
+@section Listas
+
+Además de cadenas y enteros, Python tiene toda clase de tipos de
+objetos diferentes. Ahora vamos a introducir uno llamado list. Las
+listas son exactamente lo que piensas que son: objetos que son listas
+de otros objetos. :)
+
+Anímate y crea una lista:
+
+@example
+>>> []
+[]
+@end example
+
+Sí, esta lista está vacía. No es muy útil, ¿verdad? Vamos a crear una
+lista de números de lotería. No queremos repetirnos todo el rato, así
+que la pondremos también en una variable:
+
+@example
+>>> lottery = [3, 42, 12, 19, 30, 59]
+@end example
+
+Muy bien, ¡tenemos una lista! ¿Qué podemos hacer con ella? Vamos a ver
+cuántos números de lotería hay en la lista. ¿Tienes alguna idea de qué
+función deberías usar para eso? ¡Ya lo sabes!
+
+@example
+>>> len(lottery)
+6
+@end example
+
+No devuelve nada, sólo ha cambiado el orden en que los números
+aparecen en la lista. Vamos a imprimirla otra vez y ver qué ha pasado:
+
+@example
+>>> print(lottery)
+[3, 12, 19, 30, 42, 59]
+@end example
+
+Como puedes ver, los números de tu lista ahora están ordenados de
+menor a mayor. ¡Enhorabuena!
+
+¿Te gustaría invertir ese orden? ¡Vamos a hacerlo!
+
+@example
+>>> lottery.reverse()
+>>> print(lottery)
+[59, 42, 30, 19, 12, 3]
+@end example
+
+Si quieres añadir algo a tu lista, puedes hacerlo escribiendo este
+comando:
+
+@example
+>>> lottery.append(199)
+>>> print(lottery)
+[59, 42, 30, 19, 12, 3, 199]
+@end example
+
+Si deseas mostrar sólo el primer número, puedes hacerlo mediante el
+uso de indexes (en español, índices). Un índice es el número que te
+dice dónde en una lista aparece un ítem. Las programadoras y los
+programadores prefieren comenzar a contar desde 0, por lo tanto el
+primer objeto en tu lista está en el índice 0, el próximo esta en el
+1, y así sucesivamente. Intenta esto:
+
+@example
+>>> print(lottery[0])
+59
+>>> print(lottery[1])
+42
+@end example
+
+Como puedes ver, puedes acceder a diferentes objetos en tu lista
+utilizando el nombre de la lista y el índice del objeto dentro de
+corchetes.
+
+Para borrar algo de tu lista tendrás que usar índices como aprendimos
+anteriormente y la función pop(). Vamos a tratar de ejemplificar esto
+y reforzaar lo que aprendimos anteriormente; vamos a borrar el primer
+número de nuestra lista.
+
+@example
+>>> print(lottery)
+[59, 42, 30, 19, 12, 3, 199]
+>>> print(lottery[0])
+59
+>>> lottery.pop(0)
+59
+>>> print(lottery)
+[42, 30, 19, 12, 3, 199]
+@end example
+
+¡Funcionó de maravilla!
+
+Para diversión adicional, prueba algunos otros índices: 6, 7, 1000,
+-1, -6 ó -1000. A ver si puedes predecir el resultado antes de
+intentar el comando. ¿Tienen sentido los resultados?
+
+Puedes encontrar una lista de todos los métodos disponibles para
+listas en este capítulo de la documentación de Python:
+@url{https://docs.python.org/3/tutorial/datastructures.html}
+
+@section Diccionarios
+
+Para lectores en casa: este capítulo está cubierto en el video
+@url{https://www.youtube.com/watch?v=ZX1CVvZLE6c, Bases de Python:
+Diccionarios.}
+
+Un diccionario es similar a una lista, pero accedes a valores usando
+una llave en vez de un índice. Una llave puede ser cualquier cadena o
+número. La sintaxis para definir un diccionario vacío es:
+
+@example
+>>> {}
+{}
+@end example
+
+Esto demuestra que acabas de crear un diccionario vacío. ¡Hurra!
+
+Ahora, trata escribiendo el siguiente comando (intenta reemplazando
+con tu propia información):
+
+@example
+>>> participant = {'name': 'Ola', 'country': 'Poland', 'favorite_numbers': [7, 42, 92]}
+@end example
+
+Con este comando, acabas de crear una variable llamada participant con
+tres pares llave-valor:
+
+@itemize @bullet
+@item
+La llave name apunta al valor 'Ola' (un objeto string),
+@item
+country apunta a 'Poland' (otro string),
+@item
+y favorite_numbers apunta a [7, 42, 92] (una list con tres números en ella).
+@end itemize
+
+Puedes verificar el contenido de claves individuales con esta sintaxis:
+
+@example
+>>> print(participant['name'])
+Ola
+@end example
+
+Lo ves, es similar a una lista. Pero no necesitas recordar el índice -
+sólo el nombre.
+
+¿Qué pasa si le pedimos a Python el valor de una clave que no existe?
+¿Puedes adivinar? ¡Pruébalo y verás!
+
+@example
+>>> participant['age']
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'age'
+@end example
+
+¡Mira, otro error! Este es un KeyError. Python te ayuda y te dice que
+la llave 'age' no existe en este diccionario.
+
+¿Cuando deberías usar un diccionario o una lista? Bueno, es un buen
+punto para reflexionar. Piensa sobre la respuesta, antes de mirar una
+solución en la siguiente línea.
+
+@itemize @bullet
+@item
+¿Sólo necesitas una secuencia ordenada de elementos? Usa una lista.
+@item
+¿Necesitas asociar valores con claves, así puedes buscarlos
+eficientemente (usando las claves) más adelante? Utiliza un
+diccionario.
+@end itemize
+
+Los diccionarios, como las listas, son mutables, lo que quiere decir
+que pueden ser modificados después de ser creados. Puedes agregar
+nuevos pares llave/valor a un diccionario luego de crearlo, como:
+
+@example
+>>> participant['favorite_language'] = 'Python'
+@end example
+
+Como las listas, usando el método len() en los diccionarios devuelven
+el número de pares llave-valor en el diccionario. Adelante escribe el
+comando:
+
+@example
+>>> len(participant)
+4
+@end example
+
+Espero tenga sentido hasta ahora. :) ¿Listo para más diversión con
+diccionarios? Salta a la siguiente línea para algunas cosas
+sorprendentes.
+
+Puedes utilizar el comando pop() para borrar un elemento en el
+diccionario. Por ejemplo, si deseas eliminar la entrada
+correspondiente a la clave 'favorite_numbers', tienes que escribir el
+siguiente comando:
+
+@example
+>>> participant.pop('favorite_numbers')
+[7, 42, 92]
+>>> participant
+{'country': 'Poland', 'favorite_language': 'Python', 'name': 'Ola'}
+@end example
+
+Como puedes ver en la salida, el par de llave-valor correspondiente a
+la llave 'favorite_numbers' ha sido eliminado.
+
+Además de esto, también puedes cambiar un valor asociado a una llave
+ya creada en el diccionario. Escribe:
+
+@example
+>>> participant['country'] = 'Germany'
+>>> participant
+{'country': 'Germany', 'favorite_language': 'Python', 'name': 'Ola'}
+@end example
+
+Como puedes ver, el valor de la llave 'country' ha sido modificado de
+'Poland' a 'Germany'. :) ¿Emocionante? ¡Hurra! Has aprendido otra cosa
+asombrosa.
+
+@section Resumen
+
+¡Genial! Sabes mucho sobre programación ahora. En esta última parte
+aprendiste sobre:
+
+@itemize @bullet
+@item
+Errores - ahora sabes cómo leer y entender los errores que aparecen si Python no entiende un comando
+@item
+Variables - nombres para los objetos que te permiten codificar más fácilmente y hacer el código más legible
+@item
+listas - listas de objetos almacenados en un orden determinado
+@item
+diccionarios - objetos almacenados como pares llave-valor
+@end itemize
+
+¿Emocionada por la siguiente parte? :)
+
+@section Compara cosas
+
+Para lectores en casa: este capítulo está cubierto en el vídeo
+@url{https://www.youtube.com/watch?v=7bzxqIKYgf4, Bases de Python:
+Comparaciones.}
+
+Buena parte de la programación incluye comparar cosas. ¿Qué es lo más
+fácil para comparar? Números, por supuesto. Vamos a ver cómo funciona:
+
+@example
+>>> 5 > 2
+True
+>>> 3 < 1
+False
+>>> 5 > 2 * 2
+True
+>>> 1 == 1
+True
+>>> 5 != 2
+True
+@end example
+
+Le dimos a Python algunos números para comparar. Como puedes ver,
+Python no sólo puede comparar números, sino que también puede comparar
+resultados de funciones. Bien, ¿eh?
+
+¿Te preguntas por qué pusimos dos signos igual == al lado del otro
+para comparar si los números son iguales? Utilizamos un solo = para
+asignar valores a las variables. Siempre, siempre es necesario poner
+dos == Si deseas comprobar que las cosas son iguales entre sí. También
+podemos afirmar que las cosas no son iguales a otras. Para eso,
+utilizamos el símbolo !=, como mostramos en el ejemplo anterior.
+
+Da dos tareas más a Python:
+
+@example
+>>> 6 >= 12 / 2
+True
+>>> 3 <= 2
+False
+@end example
+
+Hemos visto > y <, pero, ¿qué significan >= y <=? Los puedes leer así:
+
+@itemize @bullet
+@item
+x > y significa: x es mayor que y
+@item
+x < y significa: x es menor que y
+@item
+x <= y significa: x es menor o igual que y
+@item
+x >= y significa: x es mayor o igual que y
+@end itemize
+
+¡Genial! ¿Quieres hacer uno más? Intenta esto:
+
+@example
+>>> 6 > 2 and 2 < 3
+True
+>>> 3 > 2 and 2 < 1
+False
+>>> 3 > 2 or 2 < 1
+True
+@end example
+
+Puedes darle a Python todos los números para comparar que quieras, y
+siempre te dará una respuesta. Muy inteligente, ¿verdad?
+
+@itemize @bullet
+@item
+and - si utilizas el operador and, ambas comparaciones deben ser True
+para que el resultado de todo el comando sea True
+@item
+or - si utilizas el operador or, sólo una de las comparaciones tiene
+que ser True para que el resultado de todo el comando sea True
+@end itemize
+
+¿Has oído la expresión "comparar manzanas con naranjas"? Vamos a
+probar el equivalente en Python:
+
+@example
+>>> 1 > 'django'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: '>' not supported between instances of 'int' and 'str'
+@end example
+
+Aquí verás que al igual que en la expresión, Python no es capaz de
+comparar un número (int) y un string (str). En cambio, muestra un
+TypeError y nos dice que los dos tipos no se pueden comparar.
+
+@section Boolean
+
+Incidentalmente, acabas de aprender sobre un nuevo tipo de objeto en
+Python. Se llama Boolean (booleano).
+
+Hay sólo dos objetos booleanos:
+
+@itemize @bullet
+@item
+True - verdadero
+@item
+False - falso
+@end itemize
+
+Pero para que Python entienda esto, siempre los tienes que escribir de
+modo 'True' (la primera letra en mayúscula, con el resto de las letras
+en minúscula). true, TRUE, y tRUE no funcionarán – solamente True es
+correcta. (Lo mismo aplica también para 'False'.)
+
+Los valores booleanos pueden ser variables, también. Ve el siguiente
+ejemplo:
+
+@example
+>>> a = True
+>>> a
+True
+@end example
+
+También puedes hacerlo de esta manera:
+
+@example
+>>> a = 2 > 5
+>>> a
+False
+@end example
+
+Practica y diviértete con los booleanos ejecutando los siguientes
+comandos:
+
+@itemize @bullet
+@item
+True and True
+@item
+False and True
+@item
+True or 1 == 1
+@item
+1 != 2
+@end itemize
+
+¡Felicidades! Los booleanos son una de las funciones más geniales en
+programación y acabas de aprender cómo usarlos.
+
+
 
 
 @node Index
