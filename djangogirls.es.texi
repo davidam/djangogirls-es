@@ -1268,7 +1268,7 @@ de esta manera:
 
 @example
 $ mkdir practice
-@example
+@end example
 
 @subsection Crear directorio: Windows
 
@@ -1280,9 +1280,9 @@ Este pequeño comando creará una carpeta con el nombre práctica en tu
 computador. ¡Puedes verificar si está allí en tu Escritorio o
 ejecutando uno de los siguientes comandos ls o dir! Inténtalo. :)
 
-    PRO tip: Si no quieres escribir el mismo comando una y otra vez,
-    intenta presionando la flecha arriba y flecha abajo en tu teclado
-    para regresar a través de los comandos recientemente usados.
+PRO tip: Si no quieres escribir el mismo comando una y otra vez,
+intenta presionando la flecha arriba y flecha abajo en tu teclado
+para regresar a través de los comandos recientemente usados.
 
 @subsection ¡Ejercicio!
 
@@ -1379,6 +1379,61 @@ Genial, ¿no? :)
 @subsection Resumen
 
 Aquí está un resumen de algunos comandos útiles:
+
+@multitable @columnfractions .15 .20 .35 .30
+@headitem Comando (win) @tab Comando (Mac/Lin) @tab Descripci@'on @tab Ejemplo
+@item exit
+@tab exit
+@tab Cierra la ventana
+@tab exit
+@item cd
+@tab cd
+@tab Cambia el directorio
+@tab cd test
+@item cd
+@tab pwd
+@tab Mostrar el directorio actual
+@tab cd (Win) o pwd (Mac/Lin)
+@item dir
+@tab ls
+@tab Lista directorios/archivos
+@tab dir
+@item copy
+@tab cp
+@tab Copia de archivos
+@tab copy c:\test\test.txt c:\windows\test.txt
+@item move
+@tab mv
+@tab Mueve archivos
+@tab move c:\test\test.txt c:\windows\test.txt
+@item mkdir
+@tab mkdir
+@tab Crea un nuevo archivos
+@tab mkdir testdirectory
+@item rmdir (o del)
+@tab rm 
+@tab Eliminar archivo
+@tab del c:\test\test.txt
+@item rmdir /S
+@tab rm -r
+@tab Eliminar directorio
+@tab rm -r testdirectory
+@item [CMD] /?
+@tab man [CMD]
+@tab Obtener ayuda para un comando
+@tab cd /? (Win) o man cd (Mac OS / Lin)
+@end multitable
+
+Estos son solo algunos de los comandos que puedes ejecutar en tu línea
+de comando o consola, pero no usarás ninguno más por hoy.
+
+Si eres curios@, ss64.com contiene una referencia completa de comandos
+para todos los sistemas operativos.
+
+@subsection ¿Lista? ¿Listo?
+
+¡Vamos a bucear en Python!
+
 
 @node Index
 @unnumbered Index
