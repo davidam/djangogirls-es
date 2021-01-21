@@ -1216,11 +1216,24 @@ Ahora, vamos a nuestro directorio de escritorio:
 $ cd Desktop
 @end example
 
+Verifica si está cambiado actualmente:
+
+@example
+$ pwd /Users/olasitarska/Desktop
+@end example
+
 @subsection Cambiar el directorio actual: Linux
 
 @example
 $ cd Escritorio
 @end example
+
+Verifica si está cambiado actualmente:
+
+@example
+$ pwd /Users/olasitarska/Desktop
+@end example
+
 
 Nota que el nombre del directorio "Escritorio" puede ser traducido al
 lenguaje de tu cuenta de Linux. Si ese es el caso, necesitarás
@@ -1235,7 +1248,137 @@ Desktop para el inglés.
 
 Verifica si está cambiado actualmente:
 
+@example
+> cd C:\Users\olasitarska\Desktop
+@end example
 
+¡Aquí está!
+
+PRO tip: si escribes cd D y luego presionas tab en tu teclado, la
+línea de comandos automáticamente llenará el resto de el nombre por el
+que puedes navegar. Si hay mas que una carpeta iniciando con "D",
+presiona la tecla tab dos veces para obtener una lista de opciones.
+
+@section Crear un directorio
+
+¿Cómo crear un práctico directorio para tu escritorio? Puedes hacerlo
+de esta manera:
+
+@subsection Crear directorio: OS X y Linux
+
+@example
+$ mkdir practice
+@example
+
+@subsection Crear directorio: Windows
+
+@example
+> mkdir practice
+@end example
+
+Este pequeño comando creará una carpeta con el nombre práctica en tu
+computador. ¡Puedes verificar si está allí en tu Escritorio o
+ejecutando uno de los siguientes comandos ls o dir! Inténtalo. :)
+
+    PRO tip: Si no quieres escribir el mismo comando una y otra vez,
+    intenta presionando la flecha arriba y flecha abajo en tu teclado
+    para regresar a través de los comandos recientemente usados.
+
+@subsection ¡Ejercicio!
+
+Un pequeño reto para ti: en tu nuevo directorio creado práctica, crea
+un directorio llamado prueba. (Usa los comandos cd y mkdir.)
+
+Soluci@'on en OS X y Linux:
+
+@example
+$ cd practica
+$ mkdir prueba
+$ ls
+prueba
+@end example
+
+Soluci@'on en Windows:
+
+@example
+> cd practica
+> mkdir prueba
+> dir
+05/08/2014 07:28 PM <DIR>      prueba
+@end example
+
+¡Felicidades! :)
+
+@subsection Limpieza
+
+No queremos dejar un enredo, así que removamos todo lo que hicimos
+hasta este momento.
+
+Primero, necesitamos regresar al Escritorio:
+
+En OS X y GNU/Linux:
+
+@example
+$ pwd /Users/olasitarska/Desktop
+@end example
+
+En Windows:
+
+@example
+> cd C:\Users\olasitarska\Desktop
+@end example
+
+Es hora de eliminar el directorio practica:
+
+En OS X y GNU/Linux:
+
+@example
+$ rm -r practice
+@end example
+
+En Windows:
+
+@example
+> rmdir /S practica
+practica, ¿Estás segur@<Y/N>? Y
+@end example
+
+¡Hecho! Estás seguro que lo eliminaste realmente, verifica:
+
+En OS X y GNU/Linux:
+
+@example
+$ ls
+@end example
+
+En Windows:
+
+@example
+> dir
+@end example
+
+@subsection Salir
+
+¡Eso es todo por ahora! Tú puedes ahora cerrar la línea de comandos o
+consola sin problemas. Hazlo como un hacker, ¿vale? :)
+
+En OS X y GNU/Linux:
+
+@example
+$ exit
+@end example
+
+En Windows:
+
+@example
+> exit
+@end example
+
+Genial, ¿no? :)
+
+@subsection Resumen
+
+Aquí está un resumen de algunos comandos útiles:
 
 @node Index
 @unnumbered Index
