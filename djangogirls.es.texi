@@ -878,6 +878,364 @@ Cuando comiences el taller, estarás habilitada para ir directamente a
 ¡Tu primer proyecto en Django! porque ya cubriste el material en los
 capítulos anteriores.
 
+@node C@'omo funciona Internet
+@chapter C@'omo funciona Internet
+@cindex C@'omo funciona Internet
+
+
+@verbatim
+    Para lectores en casa: este capítulo está cubierto en el video
+    @url{https://www.youtube.com/watch?v=oM9yAA09wdc, ¿Cómo funciona Internet?}.
+
+    Este capítulo está inspirado en la charla "How the Internet works"
+    de Jessica McKellar (@url{http://web.mit.edu/jesstess/www/}).
+@end verbatim
+
+Apostamos a que utilizas Internet todos los días. Pero, ¿sabes lo que
+pasa cuando escribes una dirección como @url{http://djangogirls.org}
+en tu navegador y presionas enter?
+
+La primera cosa que necesitas entender, es que una página web consiste
+de un puñado de archivos guardados en el disco duro -- como tus
+películas, música, o imágenes. Sin embargo, hay una parte que es única
+para los sitios web: ellos incluyen código computarizado llamado HTML.
+
+Si no estás familiarizada con la programación, puede ser difícil de
+comprender HTML a la primera, pero tus navegadores web (como Chrome,
+Safari, Firefox, etc.) lo aman. Los navegadores están diseñados para
+entender este código, seguir sus instrucciones y presentar estos
+archivos de los cuales está hecho tu sitio web, exactamente de la
+forma que quieres.
+
+Como cualquier otro archivo, tenemos que guardar los archivos HTML en
+algún lugar de un disco duro. Para Internet, utilizamos equipos
+especiales, de gran alcance llamados servidores. Estos no tienen una
+pantalla, ratón o teclado, debido a que su propósito es almacenar
+datos y servirlos. Por esa razón son llamados servidores -- porque
+sirven los datos.
+
+OK, pero quieres saber cómo Internet se ve, ¿cierto?
+
+¡Te hemos hecho una imagen! Luce algo así:
+
+@image{images/internet_1,6in,,C@'omo funciona Internet}
+
+Parece un lío, ¿no? De hecho, es una red de máquinas interconectadas
+(los servidores que nombramos anteriormente). ¡Cientos de miles de
+máquinas! ¡Muchos, muchos kilómetros de cables alrededor del mundo!
+Puedes visitar el sitio web Submarine Cable Map
+(@url{http://submarinecablemap.com/}) y ver lo complicada que es la
+red. Aquí hay una captura de pantalla de la página web:
+
+@image{images/internet_3,6in,,Submarine Cable Map}
+
+Es fascinante, ¿no? Pero sería imposible tener un cable entre todas y
+cada una de las máquinas conectadas a internet. Así que, para llegar a
+una máquina (por ejemplo la que aloja @url{http://djangogirls.org})
+tenemos que elevar una solicitud mediante una gran cantidad de
+máquinas diferentes.
+
+Se parece a esto:
+
+@image{images/internet_3,6in,,Django Girls Internet Map}
+
+Imagina que cuando escribes @url{http://djangogirls.org}, estas
+enviando una carta que dice: "Estimadas Django Girls, me gustaría ver
+su sitio web djangogirls.org. ¡Por favor, envíenmelo!"
+
+Tu carta va hacia la oficina de correo más cercana. Luego va a otra
+que es un poco más cerca de su destinatario, luego otra y otra hasta
+que es entregada a su destino. La única cosa diferente es que si
+envías muchas cartas (paquetes de datos) al mismo lugar, cada una
+podría ir a través de oficinas de correos totalmente distintas
+(routers). Esto depende de cómo se distribuyen en cada oficina.
+
+@image{images/internet_3,6in,,Django Girls Email}
+
+Así es como funciona - se envían mensajes y se espera una
+respuesta. En lugar de papel y lápiz, se usan bytes de datos, pero ¡la
+idea es la misma!
+
+En lugar de direcciones con el nombre de la calle, ciudad, código
+postal y nombre del país, utilizamos direcciones IP. Tu computadora
+pide primero el DNS (Domain Name System - en español Sistema de
+Nombres de Dominio) para traducir djangogirls.org a una dirección
+IP. Funciona en cierta manera como los viejos directorios telefónicos
+donde puedes buscar el nombre de la persona que se deseas contactar y
+encontrar su número de teléfono y dirección.
+
+Cuando envías una carta, esta necesita tener ciertas características
+para ser entregada correctamente: una dirección, sello, etc. También
+utilizas un lenguaje que el receptor pueda entender, ¿cierto? Lo mismo
+se aplica a los paquetes de datos que envía para ver un sitio
+Web. Utilizamos un protocolo llamado HTTP (Protocolo de transferencia
+de hipertexto).
+
+Así que, básicamente, cuando tienes un sitio web necesitas tener un
+servidor (la máquina) donde este vive. Cuando el servidor recibe una
+petición entrante (en una carta), este envía su sitio de Internet (en
+otra carta).
+
+Ya que este es un tutorial de Django, puede que te preguntes qué es lo
+que Django hace. Bueno, cuando envías una respuesta, no siempre
+quieres enviar lo mismo a todo el mundo. Es mucho mejor si tus cartas
+son personalizadas, especialmente para la persona que acaba de
+escribir, ¿cierto? Django nos ayuda con la creación de estas cartas
+personalizadas. :)
+
+Suficiente conversación - ¡tiempo de crear!
+
+@node Introducción a la interfaz de línea de comandos
+@chapter Introducción a la interfaz de línea de comandos
+@cindex Introducción a la interfaz de línea de comandos
+
+Para los lectores en casa: este capítulo puede verse en el vídeo Tu
+nuevo amigo: Línea de Comandos.
+
+Es emocionante, ¿verdad? ¡Vas a escribir tu primera línea de código en
+pocos minutos! :)
+
+Permítenos presentarte a tu primer amigo nuevo: ¡la línea de comandos!
+
+Los siguientes pasos te mostrarán cómo usar aquella ventana negra que
+todos los hackers usan. Puede parecer un poco aterrador al principio
+pero es solo un mensaje en pantalla que espera a que le des órdenes.
+
+Nota Ten en cuenta que a lo largo de este libro usamos los términos
+'directorio' y 'carpeta' indistintamente pero son la misma cosa.
+
+@section ¿Qué es la línea de comandos?
+
+La ventana, que generalmente es llamada línea de comandos ó interfaz
+de línea de comandos, es una aplicación basada en texto para ver,
+manejar y manipular archivos en tu ordenador. Similar a Windows
+Explorer o Finder en Mac, pero sin la interfaz gráfica. Otros nombres
+para la línea de comandos son: cmd, CLI, prompt -símbolo de sistema-,
+console -consola- o terminal.
+
+@section Abrir la interfaz de línea de comandos
+
+Para empezar con algunos experimentos necesitarás abrir nuestra
+interfaz de línea de comandos en primer lugar.
+
+@subsection Opening: Windows
+
+Dependiendo de tu versión de Windows y tu teclado, una de las opciones
+siguientes debería abrir una ventana de comandos (puede que necesites
+experimentar un poco, pero no se necesita probar todas estas
+sugerencias):
+
+
+Ve al menú o pantalla de Inicio, y escribe "Símbolo del Sistema" en el
+cuadro de búsqueda.
+
+@itemize @bullet
+@item
+Ve a Menú de inicio → Windows System → Command Prompt.
+@item
+Ve al menú de Inicio → Todos los Programas → Accessorios → Símbolo del
+Sistema.
+@item
+Ve a la pantalla de Inicio, pasa el ratón sobre la esquina inferior
+izquierda de la pantalla, y haz click en la flecha hacia abajo (en una
+pantalla táctil, desliza hacia arriba desde la parte baja de la
+pantalla). La página de la Aplicación debería abrirse. Haz click en
+Símbolo del Sistema en la sección Sistema de Windows.
+@item
+Mantén la tecla especial de Windows de tu teclado y pulsa "X". Elige
+"Símbolo del Sistema" del menú emergente.
+@item
+Mantén pulsada la tecla de Windows y pulsa "R" para abrir una ventana
+"Ejecutar". Escribe "cmd" en la caja, y haz click en OK.
+@end itemize
+
+@image{images/windows-plus-r,6in,,Windows Commands}
+
+Más adelante en este tutorial, necesitarás tener dos consolas de
+comandos abiertas a la misma vez. Sin embargo, en algunas versiones de
+Windows, si ya tienes abierta una ventana de comandos e intentas abrir
+otra usando el mismo método, simplemente maximizará la que ya tienes
+abierta. ¡Inténtalo ahora en tu ordenador y mira qué ocurre! Si solo
+se abre una ventana de comandos, intenta alguno de los otros métodos
+explicados anteriormente. Al menos uno de ellos debería abrir una
+nueva ventana de comandos.
+
+@subsection Opening: OS X
+
+Ve a Aplicaciones → Utilidades → Terminal.
+
+@subsection Opening: Linux
+
+Probablemente se encuentre en Aplicaciones → Accesorios → Terminal, o
+Aplicaciones → Sistema → Terminal, aunque esto dependerá de tu
+sistema. Si no lo encuentras allí, intenta buscarlo en Google. :)
+
+@section Símbolo del Sistema (Prompt)
+
+Ahora deberías ver una pantalla blanca o negra que espera a que
+introduzcas tus comandos.
+
+@subsection Prompt: OS X and Linux
+
+Si estás en Mac o Linux, probablemente veas una $, como ésta:
+
+$
+
+@subsection Prompt: Windows
+
+En Windows, probablemente veas un >, como éste:
+
+>
+
+Echa un vistazo a la sección anterior sobre Linux -- podrás consultar
+más cuando llegues a PythonAnywhere más adelante en este tutorial.
+
+Cada comando vendrá precedido por un $ o un > y un espacio, pero no
+debes escribirlos tú mismo. El ordenador lo hará por ti. :)
+
+@verbatim
+Solo una pequeña anotación: en tu caso puede que haya algo como
+C:\Users\ola> o Olas-MacBook-Air:~ ola$ antes del símbolo de
+introducción, lo cual es 100% NORMAL.
+@end verbatim
+
+La parte superior incluye el $ o el > que es llamado en la línea de
+comandos, o mas corto prompt. Introduce algo allí.
+
+En el tutorial, cuando queramos introducir un comando, incluye el $ o
+>, y ocasionalmente más a la izquierda. Ignora la parte izquierda
+solamente escribiendo el comando, el cuál inicia después del prompt.
+
+@section Tu primer comando (¡BIEN!)
+
+Comencemos tecleando este comando:
+
+@subsection Your first command: OS X and Linux
+
+$ whoami
+
+@subsection Your first command: Windows
+
+Y luego presiona enter. Esto será nuestro resultado:
+
+$ whoami olasitarska
+
+Como puedes ver, el computador solo ha impreso tu nombre de usuario. Ordenado, ¿ah? :)
+
+    Intenta escribir cada comando; no copies y pegues. ¡De esta manera lo recordarás!
+
+@section Fundamentos
+
+Cada sistema operativo tiene un poco diferente la configuración de los
+comandos para la consola, así que asegurate de seguir las
+instrucciones para tu sistema operativo. Intentemos esto, ¿Verdad?
+
+@section Directorio actual
+
+Sería bueno saber dónde estamos ahora, ¿Correcto? Veamos. Escribe éste
+comando y presiona
+
+@subsection Current directory: OS X and Linux
+
+@example
+$ pwd
+/Users/olasitarska
+@end example
+
+    Nota: 'pwd' es para imprimir el directorio de trabajo (print working directory).
+
+@subsection Current directory: Windows
+
+@example
+> cd 
+C:\Users\olasitarska
+@end example
+
+    Nota: 'cd' es para cambiar de directorio (change directory). Con la consola tu puedes usar pwd solo con Linux o Mac OS X.
+
+Probablemente veremos algo similar en tu computador. Una vez que abres
+la consola o la línea de comandos, usualmente inicias en tu directorio
+principal.
+
+@section Aprende más sobre un comando
+
+¡Muchos comandos pueden escribirse en el prompt que tiene construido
+una ayuda que puedes leer! Por ejemplo, aprende más acerca de el
+comando del directorio actual:
+
+@subsection Command help: OS X and Linux
+
+OS X y Linux tienen un comando man, el cual te da una ayuda en
+comandos. Intenta man pwd y ve qué dice, o coloca man antes de otro
+comando para ver su ayuda. La salida de man nomalmentes es
+paginada. Usa la barra de espacio para moverte a la siguiente página,
+y q para salir de la ayuda.
+
+@subsection Command Help: Windows
+
+Añade un sufijo /? para más comandos que se imprimirán en la página de
+ayuda. Puedes hacer scroll a la ventana de comandos para verlos
+todos. Intenta cd /?.
+
+@section Listar ficheros y directorios
+
+Así que, ¿en qué estamos? Estaría bien saberlo. Veamos:
+
+@subsection Listar ficheros y directorios: OS X y Linux
+
+@example
+$ ls
+Applications
+Desktop
+Downloads
+Music
+...
+@end example
+
+@subsection Listar ficheros y directorios: Windows
+
+@example
+> dir
+Directory of C:\Users\olasitarska
+05/08/2014 07:28 PM <DIR> Applications
+05/08/2014 07:28 PM <DIR> Desktop
+05/08/2014 07:28 PM <DIR> Downloads
+05/08/2014 07:28 PM <DIR> Music
+...
+@end example
+
+Nota: En consola tu puedes usar también 'ls' como en Linux y Mac OS X. 
+
+@section Cambiar el directorio actual
+
+Ahora, vamos a nuestro directorio de escritorio:
+
+@subsection Cambiar el directorio actual: OS X
+
+@example
+$ cd Desktop
+@end example
+
+@subsection Cambiar el directorio actual: Linux
+
+@example
+$ cd Escritorio
+@end example
+
+Nota que el nombre del directorio "Escritorio" puede ser traducido al
+lenguaje de tu cuenta de Linux. Si ese es el caso, necesitarás
+reemplazar Escritorio con la traducción del nombre; por ejemplo,
+Desktop para el inglés.
+
+@subsection Cambiar el directorio actual: Windows
+
+@example
+> cd Escritorio
+@end example
+
+Verifica si está cambiado actualmente:
+
+
 
 @node Index
 @unnumbered Index
