@@ -2399,6 +2399,261 @@ comentarios - líneas que Python no ejecutará que permiten documentar el códig
 
 @section ¡Tus propias funciones!
 
+Para lectores en casa: este capítulo está cubierto en el vídeo
+@url{https://www.youtube.com/watch?v=5owr-6suOl0, Bases de Python:
+Funciones}
+
+¿Recuerdas las funciones como len() que puedes ejecutar en Python?
+Bien, buenas noticias - ¡aprenderás cómo escribir tus propias
+funciones ahora!
+
+Una función es una secuencia de instrucciones que Python debería
+ejecutar. Cada función en Python inicia con la palabra clave def, el
+nombre es dado, y puede tener algunos parámetros. Veamos. Reemplaza el
+código en python_intro.py con lo siguiente:
+
+@example
+def hi():
+    print('Hi there!')
+    print('How are you?')
+
+hi()
+@end example
+
+Okay, ¡nuestra primera función está lista!
+
+Tú puedes preguntar por qué hemos escrito el nombre de la función en
+la parte inferior del ejemplo. Esto es porque Python lee el archivo y
+lo ejecuta de arriba a bajo. Así en orden para usar nuestra función,
+tenemos que re-escribirlo en la parte inferior.
+
+Ejecuta ésto ahora y mira qué sucede:
+
+@example
+$ python3 python_intro.py
+Hi there!
+How are you?
+@end example
+
+Nota: si ésto no funciona, ¡Tranquila! La salida te ayudará a entender
+por qué:
+
+@itemize @bullet
+@item
+Si te sale NameError, probablemente significa que escribiste algo mal,
+así que deberias comprobar si utilizaste el mismo nombre para crear la
+función con def hi(): y al llamarla con hi().
+
+@item
+Si te sale un IndentationError, comprueba que las líneas del print
+tienen el mismo espacio en blanco al comienzo de línea: python
+requiere que todo el código dentro de la función esté perfectamente
+alineado.
+
+@item
+Si no hay ninguna salida, comprueba que el último hi() no esté
+identado - si lo está, esa línea también será parte de la función, y
+nunca se ejecutará.
+
+@end itemize
+
+Construyamos nuestra primera función con parámetros. Cambiaremos el
+ejemplo anterior - una función que dice 'hola' para la persona que lo
+ejecuta - con un nombre:
+
+@example
+def hi(name):
+@end example
+
+Como puedes ver, ahora le dimos a nuestra función un parámetro que
+llamamos nombre:
+
+@example
+def hi(name):
+    if name == 'Ola':
+        print('Hi Ola!')
+    elif name == 'Sonja':
+        print('Hi Sonja!')
+    else:
+        print('Hi anonymous!')
+
+hi()
+@end example
+
+Recuerda: La función print está indentada con 4 espacios en la
+sentencia if. Esto es porque la función se ejecuta cuando la condición
+es conocida. Veamos cómo funciona ahora:
+
+@example
+$ python3 python_intro.py
+Traceback (most recent call last):
+File "python_intro.py", line 10, in <module>
+  hi()
+TypeError: hi() missing 1 required positional argument: 'name'
+@end example
+
+Oops, un error. Por suerte, Python nos da un útil y agradable mensaje
+de error. Este nos dice que la función hi() (que definimos) tiene un
+argumento requerido (llamado nombre) y que olvidamos pasarlo cuando
+llamamos a la función. Configuremos esto en la parte inferior del
+archivo:
+
+@example
+hi("Ola")
+@end example
+
+Y ejecutemos otra vez:
+
+@example
+$ python3 python_intro.py
+Hi Ola!
+@end example
+
+¿Y si cambiamos el nombre?
+
+@example
+hi("Sonja")
+@end example
+
+Y lo ejecutamos:
+
+@example
+$ python3 python_intro.py
+Hi Sonja!
+@end example
+
+Ahora, ¿qué piensas que sucederá si escribes otro nombre allí? (No Ola
+o Sonja.) Inténtalo y comprueba si estás en lo correcto. Debería
+imprimir esto:
+
+@example
+Hi anonymous!
+@end example
+
+Esto es sorprendente, ¿Verdad? De esta manera tú no tienes que repetir
+la función cada vez que cambies el nombre de la persona que está
+supuesta a recibir. Y eso es exactamente por qué necesitamos funciones
+- ¡tú nunca quieres repetir tú código!
+
+Hacer algo más inteligente - hay más nombres que dos, y escribir una
+condición para cada uno sería difícil, ¿Verdad? Reemplaza el contenido
+de tu archivo con lo siguiente:
+
+@example
+def hi(name):
+    print('Hi ' + name + '!')
+
+hi("Rachel")
+@end example
+
+Llamaremos al código ahora:
+
+@example
+$ python3 python_intro.py
+Hi Rachel!
+@end example
+
+¡Felicidades! ¡Ya aprendíste cómo escribir funciones! :)
+
+@section Bucles
+
+Para lectores en casa: este capítulo está cubierto en el vídeo
+@url{https://www.youtube.com/watch?v=aEA6Rc86HF0, Python Basics: For
+Loop}
+
+Listo esta es la última parte. Eso fue rápido, ¿verdad? :)
+
+Los programadores no les gusta repetir. Programar es todo acerca de
+automatizar cosas, así que no queremos recibir a cada persona por su
+nombre manualmente, ¿verdad? Allí es dónde los ciclos vienen a
+manejarse.
+
+¿Aún recuerdas las listas? Hagamos una lista de niñas:
+
+@example
+girls = ['Rachel', 'Monica', 'Phoebe', 'Ola', 'You']
+@end example
+
+Queremos recibir a todos ellos con sus nombres. Tenemos la función
+hola para hacerlo, así que usémosla en un ciclo:
+
+@example
+for name in girls:
+@end example
+
+La sentencia for se comporta parecido a una sentencia if; ambos
+códigos necesitan ser indentados por 4 espacios.
+
+Aquí está completo el código que estará en el archivo:
+
+@example
+def hi(name):
+    print('Hi ' + name + '!')
+
+girls = ['Rachel', 'Monica', 'Phoebe', 'Ola', 'You']
+for name in girls:
+    hi(name)
+    print('Next girl')
+@end example
+
+Y cuando lo ejecutemos:
+
+@example
+$ python3 python_intro.py
+Hi Rachel!
+Next girl
+Hi Monica!
+Next girl
+Hi Phoebe!
+Next girl
+Hi Ola!
+Next girl
+Hi You!
+Next girl
+@end example
+
+Como puedes ver, todo lo que coloques dentro de una sentencia for con
+una indentación, será repetida para cada elemento de la lista girls.
+
+Tu puedes también usar for con números usando la función range:
+
+@example
+for i in range(1, 6):
+    print(i)
+@end example
+
+El cuál imprimirá:
+
+@example
+1
+2
+3
+4
+5
+@end example
+
+range es una función que crea una lista de números en serie (estos
+números son proporcionados por ti como parámetros).
+
+Nota que el segundo de estos números no está incluido en la lista que
+regresa Python (es decir, range(1, 6) cuenta desde 1 a 5, pero no
+incluye el número 6). Esto es porque "range" está medio-abierto, y por
+eso se incluye el primer valor, pero no el último.
+
+@section Resumen
+
+Eso es todo. ¡Tú rockeas totalmente! Esto fue un capítulo difícil, así
+que deberías sentirte orgullos@ de ti. ¡Estamos definitivamente
+encantados de que hayas llegado tan lejos!
+
+Para un tutorial oficial y completo de python visita
+@url{https://docs.python.org/3/tutorial/}. Este te dará un estudio completo
+de éste lenguaje. Gracias :)
+
+Tu podrías querer un momento para algo - estirarte, caminar cerca,
+descansar tus ojos - antes de avanzar a un próximo capítulo. :)
+
+@image{images/cupcake,6in,,Cupcake}
 
 
 @node Index
