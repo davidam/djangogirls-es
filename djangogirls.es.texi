@@ -2122,6 +2122,282 @@ True or 1 == 1
 ¡Felicidades! Los booleanos son una de las funciones más geniales en
 programación y acabas de aprender cómo usarlos.
 
+@section ¡Guárdalo!
+
+Para lectores en casa: este capítulo está cubierto en el vídeo Bases
+de Python: @url{https://www.youtube.com/watch?v=dOAg6QVAxyk, Guardando
+archivos y condicionales}.
+
+Hasta ahora hemos escrito todo nuestro código Python en el intérprete,
+lo cual nos limita a ingresar una línea de código a la
+vez. Normalmente los programas son guardados en archivos y son
+ejecutados por el intérprete o compilador de nuestro lenguaje de
+programación. Hasta ahora, hemos estado corriendo nuestros programas
+de a una línea por vez en el intérprete de Python. Necesitaremos más
+de una línea de código para las siguientes tareas, entonces
+necesitaremos hacer rápidamente lo que sigue:
+
+@itemize @bullet
+@item
+Salir del intérprete de Python
+@item
+Abrir el editor de texto de nuestra elección
+@item
+Guardar algo de código en un nuevo archivo de Python
+@item
+¡Ejecutarlo!
+@end itemize
+
+Para salir del intérprete de Python que hemos estado usando, escribe exit()
+
+@example
+>>> exit()
+$
+@end example
+
+Esto te llevará de vuelta a la línea de comandos.
+
+Anteriormente, seleccionamos un editor de código de la sección
+</a>editor de código</0>. Necesitaremos abrir el editor ahora y
+escribir algo de código en un nuevo archivo (o si está usando un
+Chromebook, cree un nuevo archivo en el IDE de la nube y abra el
+archivo, que estará en el editor de código incluido):
+
+@example
+print('Hello, Django girls!')
+@end example
+
+Obviamente, ahora eres una desarrolladora Python muy experimentada,
+asi que si@'entete libre de escribir algo del código que has aprendido
+hoy.
+
+Ahora tenemos que guardar el archivo y asignarle un nombre
+descriptivo. Vamos a llamar al archivo python_intro.py y guardarlo en
+tu escritorio. Podemos nombrar el archivo como queramos, pero la parte
+importante es asegurarse de que termina en .py. La extensión .py le
+dice a nuestro sistema operativo que es un archivo ejecutable de
+python y Python lo puede ejecutar.
+
+Nota Deberías notar una de las cosas más geniales de los editores de
+código: ¡los colores! En la consola de Python, todo era del mismo
+color, ahora deberías ver que la función print es de un color
+diferente a la cadena en su interior. Esto de denomina "sintaxis
+resaltada", y es una característica muy útil cuando se programa. El
+color de las cosas te dará pistas, como cadenas no cerradas o errores
+tipográficos en un nombre clave (como def en una función, que veremos
+a continuación). Esta es una de las razones por las cuales usar un
+editor de código. :)
+
+Con el archivo guardado, ¡es hora de ejecutarlo! Utilizando las
+habilidades que has aprendido en la sección de línea de comandos,
+utiliza la terminal para cambiar los directorios e ir al escritorio.
+
+En OS X:
+
+@example
+$ cd ~/Desktop
+@end example
+
+En Linux:
+
+@example
+$ cd ~/Desktop
+@end example
+
+En Windows:
+
+@example
+> cd %HomePath%\Desktop
+@end example
+
+En Windows Power Shell:
+
+@example
+> cd $Home\Desktop
+@end example
+
+Si estás atascada, pide ayuda. ¡Eso es exactamente lo que hacen las
+entrenadoras!
+
+Ahora usa Python para ejecutar el código en el archivo como esto:
+
+@example
+$ python3 python_intro.py
+Hello, Django girls!
+@end example
+
+Nota: en Windows 'python3' no es reconocido como un comando. En su
+lugar, usa 'python' para ejecutar el archivo:
+
+@example
+> python python_intro.py
+@end example
+
+¡Correcto! Ahora corriste tu primer programa de Python que fue
+guardado en un archivo. ¿Se siente increíble?
+
+Puedes ahora moverte a una herramienta esencial en programación:
+
+@section If … elif … else
+
+Muchas de las cosas en código debería ser ejecutadas solo cuando las
+condiciones son conocidas. Eso es por qué Python lo ha llamado
+sentencias if.
+
+Reemplaza el código en tu archivo python_intro.py con esto:
+
+@example
+if 3 > 2:
+@end example
+
+Si guardáramos y corriéramos esto, veríamos un error como éste:
+
+@example
+$ python3 python_intro.py
+File "python_intro.py", line 2
+         ^
+SyntaxError: unexpected EOF while parsing
+@end example
+
+Python nos espera dar nuevas instrucciones, las cuales son ejecutadas
+si la condición 3 > 2 torna a ser verdadera (o True para ese
+caso). Intentemos imprimir en Python "¡Funciona!". Cambia el código de
+tu archivo python_intro.py a esto:
+
+@example
+if 3 > 2:
+    print('It works!')
+@end example
+
+¿Notas cómo estamos indentando la siguiente línea de código con 4
+espacios? Nosotros necesitamos hacer esto para que Python comprenda
+que el código se ejecuta si el resultado es verdadero. Tú puedes poner
+un espacio, pero prácticamente todos los programadores en Python ponen
+4 espacios para hacer el código más legible. Un simple tabulador
+también contará como 4 espacios tan largos como tu editor de texto
+esté configurado. Cuando hagas tu elección, ¡no la cambies! Si ya
+identaste con 4 espacios, sigue haciendo futuras identaciones con 4
+espacios también, de otra forma, puedes encontrar problemas.
+
+Guárdalo y ejecútalo de nuevo:
+
+@example
+$ python3 python_intro.py
+It works!
+@end example
+
+Nota: Recuerda que en Windows, 'python3' no es reconocido como un
+comando. Desde ahora, reemplaza 'python3' con 'python' para ejecutar
+el archivo.
+
+@section ¿Qué pasa si una condición no es verdadera?
+
+En previos ejemplos, el código fue ejecutado solamente cuando las
+condiciones eran Verdaderas. Pero Python también tiene sentencias elif
+y else:
+
+@example
+if 5 > 2:
+    print('5 is indeed greater than 2')
+else:
+    print('5 is not greater than 2')
+@end example
+
+Cuando ésto se ejecuta, imprimirá:
+
+@example
+$ python3 python_intro.py
+5 is indeed greater than 2
+@end example
+
+Si 2 era mayor que el número 5, entonces el segundo comando sería
+ejecutado. Veamos cómo elif funciona:
+
+@example
+name = 'Sonja'
+if name == 'Ola':
+    print('Hey Ola!')
+elif name == 'Sonja':
+    print('Hey Sonja!')
+else:
+    print('Hey anonymous!')
+@end example
+
+y ejecuta:
+
+@example
+$ python3 python_intro.py
+Hey Sonja!
+@end example
+
+¿Ves qué sucedió allí? elif te deja añadir condiciones adicionales que
+se ejecutan si las condiciones previas fallan.
+
+Tú puedes añadir tantas sentencias elif como quieras, luego de tu
+sentencia inicial if. Por ejemplo:
+
+@example
+volume = 57
+if volume < 20:
+    print("It's kinda quiet.")
+elif 20 <= volume < 40:
+    print("It's nice for background music")
+elif 40 <= volume < 60:
+    print("Perfect, I can hear all the details")
+elif 60 <= volume < 80:
+    print("Nice for parties")
+elif 80 <= volume < 100:
+    print("A bit loud!")
+else:
+    print("Me duelen las orejas! :(")
+@end example
+
+Python corre a través de cada prueba secuencialmente e imprime:
+
+@example
+$ python3 python_intro.py
+Perfect, I can hear all the details
+@end example
+
+@section Comentarios
+
+Los comentarios son líneas que comienzan con #. Tú puedes escribir lo
+que quieras tras el # y Python lo ignorará. Los comentarios pueden
+hacer que el código sea más fácil de entender para otras personas.
+
+Veamos cómo luce:
+
+@example
+# Cambiar el volumen si esta muy alto o muy bajo
+if volume < 20 or volume > 80:
+    volume = 50
+    print("Mucho mejor!")
+@end example
+
+Tú no necesitas escribir un comentario para cada línea de código, pero
+ellos son útiles para explicar qué está haciendo el código, o proveer
+un resumen cuando se está haciendo algo complejo.
+
+@section Resumen
+
+En los últimos ejercicios aprendiste acerca de:
+
+@itemize @bullet
+@item
+Comparar cosas - en Python puedes comparar cosas haciendo uso de >, >=, ==, <=, < y de los operadores and y or
+@item
+Boolean - un tipo de objeto que sólo puede tener uno de dos valores: True o False
+@item
+Guardar archivos - almacenar código en archivos para que puedas ejecutar programas más grandes.
+@item
+if... elif... else - sentencias que te permiten ejecutar código sólo cuando se cumplen ciertas condiciones.
+@item
+comentarios - líneas que Python no ejecutará que permiten documentar el código
+@end itemize
+
+¡Es tiempo para leer la última parte de este capítulo!
+
+@section ¡Tus propias funciones!
 
 
 
