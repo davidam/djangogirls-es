@@ -3655,6 +3655,189 @@ Este posiblemente sea un buen momento para tomar un café (o té) o algo
 para comer y reenergizar tu cuerpo. Has creado tu primer modelo en
 Django - ¡Mereces un pequeño descanso!
 
+@node ¡Despliega!
+@chapter ¡Despliega!
+@cindex ¡Despliega!
+
+El siguiente capítulo puede ser, a veces, un poco difícil de
+seguir. Ten paciencia y acábalo. El despliegue es una parte importante
+del proceso en el desarrollo de un sitio web. Este capítulo está a
+mitad del tutorial para que tu mentor pueda ayudarte a conseguir que
+tu sitio web esté online, algo que puede ser un poco complicado. Así,
+aunque se te acabe el tiempo, podrás terminar el tutorial por tu
+cuenta.
+
+Hasta ahora, tu sitio web sólo está disponible en tu ordenador. ¡Ahora
+aprenderás como desplegarlo! El despliegue es el proceso de publicar
+tu aplicación en internet para que la gente pueda acceder y ver tu
+sitio web. :)
+
+Como ya has aprendido, un sitio web tiene que estar en un
+servidor. Hay muchos proveedores de servidores disponibles en
+internet, nosotros vamos a usar @url{https://www.pythonanywhere.com/,
+PythonAnywhere}. PythonAnywhere es gratuito para aplicaciones pequeñas
+que no tienen muchos visitantes, y con eso tendrás más que suficiente
+por ahora.
+
+El otro servicio externo que vamos a utilizar es
+@url{https://www.github.com/, GitHub}, un servicio de almacenamiento
+de código. Hay otras opciones por ahí, pero hoy en día casi todas las
+programadoras y programadores tenemos una cuenta de GitHub, ¡y ahora
+tú también la vas a tener!
+
+Estos tres lugares serán importantes para ti. Tu ordenador local será
+el lugar donde desarrollas y pruebas. Cuando estés contento con los
+cambios, subirás una versión de tu programa a GitHub. Tu sitio web
+estará en PythonAnywhere y para actualizarlo descargarás la última
+versión de tu código desde GitHub.
+
+@section Git
+
+Git es un "sistema de control de versiones" que utilizan muchos programadores. Este software puede seguir los cambios realizados en archivos a lo largo del tiempo de forma que más tarde puedas volver a cualquier versión anterior. Algo similar a la herramienta de "Control de Cambios" en los programas de tipo Word (por ejemplo, Microsoft Word o LibreOffice Writer), pero mucho más potente.
+
+@section Instalar Git
+
+@subsection Instalando Git: Windows
+
+Puedes descargar Git desde git-scm.com. Puedes hacer click en "Next"
+en todos los pasos excepto en dos: cuando se te pregunte que
+selecciones tu editor, selecciona Nano, y en el paso "adjusting your
+PATH environment", selecciona "Use Git and optional Unix tools from
+the Windows Command Prompt" (la última opción). Aparte de eso, los
+valores por defecto son correctos. "Checkout Windows-style, commit
+Unix-style line endings" tampoco necesita corrección.
+
+No olvides reiniciar el Símbolo del Sistema o el PowerShell una vez
+que la instalación se complete con éxito.
+
+@subsection Instalando Git: OS X
+
+Descarga Git de git-scm.com y sigue las instrucciones.
+
+@subsection Instalando Git: Debian o Ubuntu
+
+@example
+$ sudo apt install git
+@end example
+
+@subsection Instalando Git: Fedora
+
+@example
+$ sudo dnf install git
+@end example
+
+@subsection Instalando Git: openSUSE
+
+@example
+$sudo zypper install git
+@end example
+
+@section Crear nuestro repositorio Git
+
+Git sigue los cambios realizados a un grupo determinado de archivos en
+lo que llamamos un repositorio de código (abreviado "repo"). Vamos a
+crear uno para nuestro proyecto. Abre la consola y ejecuta los
+siguientes comandos en el directorio de djangogirls:
+
+Nota Comprueba en qué directorio estás ahora mismo (es decir, el
+directorio de trabajo actual) con el comando pwd (OSX/Linux) o cd
+(Windows) antes de inicializar el repositorio. Deberías estar en la
+carpeta djangogirls.
+
+@example
+$ git init
+Initialized empty Git repository in ~/djangogirls/.git/
+$ git config --global user.name "Tu nombre"
+$ git config --global user.email tu@ejemplo.com
+@end example
+
+Inicializar el repositorio de git es algo que sólo tenemos que hacer
+una vez por proyecto (y no tendrás que volver a teclear tu nombre de
+usuario y correo electrónico nunca más).
+
+Git llevará un seguimiento de los cambios realizados en todos los
+archivos y carpetas en este directorio, pero hay algunos archivos que
+queremos que ignore. Esto lo hacemos creando un archivo llamado
+.gitignore en el directorio base. Abre tu editor y crea un nuevo
+archivo con el siguiente contenido:
+
+@example
+*.pyc
+*~
+__pycache__
+myvenv
+db.sqlite3
+/static
+.DS_Store
+@end example
+
+Y guárdalo como .gitignore en la carpeta "djangogirls".
+
+Nota ¡El punto al principio del nombre del archivo es importante! Si
+tienes problemas para crearlo (a los Mac no les gusta que crees
+ficheros con un punto al principio del nombre usando el Finder por
+ejemplo), entonces usa la opción "Save As" o "Guardar como" de tu
+editor, esto funcionará seguro. Asegúrate de no añadir .txt, .py, o
+ninguna otra extensión al nombre de fichero -- Git solo lo reconocerá
+si se llama exactamente .gitignore, sin nada más.
+
+Nota Uno de los archivos especificados en tu .gitignore es
+db.sqlite3. Ese fichero es tu base de datos local, donde se almacenan
+los usuarios y publicaciones de tu blog. Vamos a seguir las buenas
+prácticas de programación web: vamos a usar bases de datos separadas
+para tu sitio local y tu sitio en producción en PythonAnywhere. La
+base de datos en PythonAnywhere podría ser SQLite, como en tu máquina
+de desarrollo, pero también podrías usar otro gestor de base de datos
+como MySQL o PostgreSQL que pueden soportar muchas más visitas que
+SQLite. En cualquier caso, al ignorar la base de datos SQLite en tu
+copia de GitHub, todos los posts y el super usuario que has creado
+hasta el momento solo estarán disponibles en local, y tendrás que
+crear nuevos usuarios y publicaciones en producción. Tu base de datos
+local es un buen campo de pruebas donde puedes probar diferentes cosas
+sin miedo a estropear o borrar las publicaciones reales de tu blog.
+
+Te recomendamos utilizar el comando git status antes de git add o en
+cualquier momento en que no sepas muy bien lo que ha cambiado. Esto te
+ayudará a evitar sorpresas, como subir cambios o archivos que no
+queríamos subir. El comando git status muestra información sobre
+cualquier archivo no seguido ("untracked"), modificado ("modified"),
+preparado ("staged"), el estado de la rama y muchas cosas más. La
+salida debería ser parecida a esto:
+
+@example
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+        blog/
+        manage.py
+        mysite/
+        requirements.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+@end example
+
+Y finalmente guardamos nuestros cambios. Ve a la consola y ejecuta
+estos comandos:
+
+@example
+$ git add --all .
+$ git commit -m "Mi aplicación Django Girls, primer commit"
+ [...]
+ 13 files changed, 200 insertions(+)
+ create mode 100644 .gitignore
+ [...]
+ create mode 100644 mysite/wsgi.py
+@end example
+
+
+
+
 @node Index
 @unnumbered Index
 @printindex cp
