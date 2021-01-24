@@ -6094,6 +6094,362 @@ Finalmente justo después de abrir la etiqueta <form ...> tenemos que añadir {%
 
 @end itemize
 
+@image{images/csrf2,6in,,CSRF2}
+
+Bueno, miremos lo que se debería ver el HTML en post_edit.html:
+
+@example
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <h2>New post</h2>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+{% endblock %}
+@end example
+
+¡Es hora de actualizar! ¡Sí! ¡Tu formulario se muestra!
+
+@image{images/new_form2,6in,,new form}
+
+Pero, ¡un momento! Si escribes algo en los campos title y text y
+tratas de guardar los cambios - ¿qué pasará?
+
+¡Nada! Una vez más estamos en la misma página y el texto se ha
+ido... no se añade ningún post nuevo. Entonces, ¿qué ha ido mal?
+
+La respuesta es: nada. Tenemos que trabajar un poco más en nuestra
+vista.
+
+@section Guardar el formulario
+
+Abre blog/views.py de nuevo en el editor. De momento todo lo que
+tenemos en la vista post_new es lo siguiente:
+
+@example
+def post_new(request):
+    form = PostForm()
+    return render(request, 'blog/post_edit.html', {'form': form})
+@end example
+
+Cuando enviamos el formulario somos redirigidos a la misma vista, pero
+esta vez tenemos algunos datos adicionales en request, más
+específicamente en request.POST (el nombre no tiene nada que ver con
+un post del blog, se refiere a que estamos "publicando" -en inglés,
+posting- datos). ¿Recuerdas que en el archivo HTML la definición de
+<form> tenía la variable method="POST"? Todos los campos del
+formulario estan ahora en request.POST. No deberías renombrar la
+variable POST (el único nombre que también es válido para la variable
+method es GET, pero no tenemos tiempo para explicar cuál es la
+diferencia).
+
+En nuestra vista tenemos dos situaciones distintas que manejar:
+primero, cuando accedemos a la página por primera vez y queremos un
+formulario vacío, y segundo, cuando regresamos a la vista con los
+datos del formulario que acabamos de ingresar. Así que tenemos que
+añadir una condición (utilizaremos if para eso):
+
+@example
+if request.method == "POST":
+    [...]
+else:
+    form = PostForm()
+@end example
+
+Es hora de rellenar los puntos [...]. Si el método es POST entonces
+querremos construir el PostForm con datos del formulario, cierto? Lo
+haremos de la siguiente manera:
+
+@example
+form = PostForm(request.POST)
+@end example
+
+Lo siguiente es verificar si el formulario está correcto (si todos los
+campos necesarios están definidos y no hay valores incorrectos). Lo
+hacemos con form.is_valid().
+
+Comprobamos que el formulario es válido y, si es así, ¡lo podemos
+salvar!
+
+@example
+if form.is_valid():
+    post = form.save(commit=False)
+    post.author = request.user
+    post.published_date = timezone.now()
+    post.save()
+@end example
+
+Básicamente, tenemos que hacer dos cosas: guardamos el formulario con
+form.save y añadimos una autora (ya que no había ningún campo de
+author en el PostForm y este campo es obligatorio). commit=False
+significa que no queremos guardar el modelo Post aún - queremos añadir
+la autora primero. La mayoría de las veces utilizarás form.save(), sin
+commit=False, pero en este caso, tenemos que hacerlo. post.save()
+conservará los cambios (añadiendo a autor) y se creará una nuevo post
+en el blog!
+
+Por último, sería genial si podemos inmediatamente ir a la página
+post_detail del nuevo post, ¿no? Para hacerlo necesitamos importar
+algo más:
+
+@example
+from django.shortcuts import redirect
+@end example
+
+Agrégalo al principio del archivo. Y ahora podemos decir: "ve a la
+página post_detail del post recién creado":
+
+@example
+return redirect('post_detail', pk=post.pk)
+@end example
+
+post_detail es el nombre de la vista a la que queremos ir. ¿Recuerdas
+que esta view requiere una variable pk? Para pasarlo a las vistas
+utilizamos pk=post.pk, donde post es el post recién creado!
+
+Bien, hablamos mucho, pero probablemente queremos ver como se ve la
+vista, ¿verdad?
+
+@example
+def post_new(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = PostForm()
+    return render(request, 'blog/post_edit.html', {'form': form})
+@end example
+
+Veamos si funciona. Ve a la página @url{http://127.0.0.1:8000/post/new/},
+añade un title y un text, guárdalo... y voilá! Se ha añadido el nuevo
+post al blog y somos redirigidos a la página de post_detail!
+
+Puede que hayas notado que estamos indicando la fecha de publicación
+antes de guardar el post. Más adelante introduciremos un botón de
+publicar en el libro Django Girls Tutorial: Extensions.
+
+¡Eso es genial!
+
+Como recientemente hemos utilizado la interfaz de administrador de
+Django, el sistema piensa que estamos conectados. Hay algunas
+situaciones que podrían llevarnos a desconectarnos (cerrando el
+navegador, reiniciando la base de datos, etc.). Si estás recibiendo
+errores al crear un post que indican la falta de inicio de sesión de
+usuario, dirígete a la pagina de admin
+@url{http://127.0.0.1:8000/admin} e inicia sesión nuevamente. Esto
+resolverá el problema temporalmente. Hay un arreglo permanente
+esperándote en el capítulo Tarea: ¡Añadir seguridad a tu sitio web!
+después del tutorial principal.
+
+@image{images/post_create_error,6in,,post create error}
+
+@section Validación de formularios
+
+Ahora, vamos a enseñarte qué tan bueno es Django forms. Un post del
+blog debe tener los campos title y text. En nuestro modelo Post no
+dijimos (a diferencia de published_date) que estos campos no son
+requeridos, así que Django, por defecto, espera que estén definidos.
+
+Trata de guardar el formulario sin title y text. ¡Adivina qué pasará!
+
+@image{images/form_validation2,6in,,form validation}
+
+Django se encarga de validar que todos los campos en el formulario
+estén correctos. ¿No es genial?
+
+@section Editar formulario
+
+Ahora sabemos cómo agregar un nuevo formulario. Pero, ¿qué pasa si
+queremos editar uno existente? Es muy similar a lo que acabamos de
+hacer. Creemos rápidamente algunas cosas importantes. (si no entiendes
+algo, pregúntale a tu tutora o tutor, o revisa lo capítulos
+anteriores, son temas que ya hemos cubierto.)
+
+Abre blog/templates/blog/post_detail.html en el editor de código y
+añade la línea
+
+@example
+<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk
+%}"><span class="glyphicon glyphicon-pencil"></span></a>
+@end example
+
+para que la plantilla quede así:
+
+@example
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}
+@end example
+
+Abre blog/urls.py en el editor y añade esta línea:
+
+@example
+    path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
+@end example
+
+Vamos a reusar la plantilla blog/templates/blog/post_edit.html, así
+que lo último que nos falta es una view.
+
+Abre blog/views.py en el editor de código y añade esto al final del todo:
+
+@example
+def post_edit(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'blog/post_edit.html', {'form': form})
+@end example
+
+Esto se ve casi exactamente igual a nuestra view post_new, ¿no? Pero
+no del todo. Por un lado, pasamos un parámetro pk adicional de
+urls. Segundo: obtenemos el modelo Post que queremos editar con
+get_object_or_404(Post, pk=pk) y después, al crear el formulario
+pasamos este post como una instancia tanto al guardar el formulario
+...
+
+@example
+form = PostForm(request.POST, instance=post)
+@end example
+
+... y justo cuando abrimos un formulario con este post para editarlo:
+
+@example
+form = PostForm(instance=post)
+@end example
+
+Ok, ¡vamos a probar si funciona! Dirígete a la página post_detail. Ahí
+debe haber un botón para editar en la esquina superior derecha:
+
+@image{images/edit_button2,6in,,edit button}
+
+Al dar clic ahí, debes ver el formulario con nuestro post del blog:
+
+@image{images/edit_form2,6in,,edit form}
+
+¡Siéntete libre de cambiar el título o el texto y guarda los cambios!
+
+¡Felicitaciones! ¡Tu aplicación está cada vez más completa!
+
+Si necesitas más información sobre los formularios de Django, lee la
+documentación:
+@url{https://docs.djangoproject.com/en/2.2/topics/forms/}
+
+@section Seguridad
+
+¡Poder crear nuevas publicaciones haciendo click en un enlace es
+genial! Pero, ahora mismo, cualquiera que visite tu página podría
+publicar un nuevo post y seguro que eso no es lo que quieres. Vamos a
+hacer que el botón sea visible para ti pero no para nadie más.
+
+Abre blog/templates/blog/base.html en el editor, busca el div
+page-header y la etiqueta del enlace (anchor) que pusimos
+antes. Debería ser algo así:
+
+@example
+<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon
+glyphicon-plus"></span></a>
+@end example
+
+Vamos a añadir otra etiqueta {% if %} que hará que el enlace sólo
+parezca para los usuarios que hayan iniciado sesión en el admin. Ahora
+mismo, ¡eres sólo tú! Cambia la etiqueta <a> para que se parezca a
+esto:
+
+@example
+{% if user.is_authenticated %}
+    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+{% endif %}
+@end example
+
+Este {% if %} hará que el enlace sólo se envíe al navegador si el
+usuario que solicita la página ha iniciado sesión. Esto no protege
+completamente la creación de nuevas entradas, pero es un buen primer
+paso. Veremos más sobre seguridad en el libro de extensiones.
+
+Recuerdas el icono de "editar" que acabamos de añadir a nuestra página
+de detalles? También queremos añadir lo mismo aquí, así otras personas
+no podrán editar posts existentes.
+
+Abre blog/templates/blog/post_detail.html en el editor y busca esta
+línea:
+
+@example
+<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk
+%}"><span class="glyphicon glyphicon-pencil"></span></a>
+@end example
+
+Cámbiala a lo siguiente:
+
+@example
+{% if user.is_authenticated %}
+    <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+{% endif %}
+@end example
+
+Dado que es probable que estés conectado, si actualizas la página, no
+verás nada diferente. Carga la página en un navegador diferente o en
+una ventana en modo incógnito ("privado" en Windows Edge) y verás que
+el link no aparece, y el icono tampoco!
+
+@section Una cosa más: ¡Tiempo de despliegue!
+
+Veamos si todo esto funciona en PythonAnywhere. ¡Tiempo de hacer otro despliegue!
+
+Lo primero, haz commit de tus últimos cambios y súbelo (push) a GitHub:
+
+@example
+$ git status
+$ git add --all .
+$ git status
+$ git commit -m "Added views to create/edit blog post inside the site."
+$ git push
+@end example
+
+Luego, en una @url{https://www.pythonanywhere.com/consoles/, consola
+Bash de PythonAnywhere}
+
+@example
+$ cd ~/<your-pythonanywhere-domain>.pythonanywhere.com
+$ git pull
+[...]
+@end example
+
+(Recuerda sustituir <your-pythonanywhere-domain> con tu subdominio de
+PythonAnywhere real, sin los paréntesis angulares.)
+
+Para terminar ve a "Web" page (usa el botón del menú de la esquina
+superior derecha, encima de la consola) y haz click en Reload. Recarga
+tu @url{https://subdomain.pythonanywhere.com} blog para ver los cambios.  ¡Y
+eso debería ser todo! Felicidades :)
+
+
+
 
 
 @node Index
