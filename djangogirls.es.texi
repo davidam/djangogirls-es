@@ -5748,6 +5748,71 @@ la página: @url{http://127.0.0.1:8000/} y, ¡boom! El servidor vuelve a dejar
 de funcionar. Echa un vistazo a la consola – como era de esperar, ¡hay
 otro error!
 
+@image{images/attribute_error2,6in,,Attribute Error}
+
+¿Recuerdas cuál es el próximo paso? ¡Añadir una vista!
+
+@section Añade la vista de detalle de la publicación
+
+Esta vez nuestra vista tomará un parámetro adicional pk. Nuestra vista
+necesita recibirlo, ¿verdad? Así que definiremos nuestra función como
+def post_detail (request, pk):. Tenga en cuenta que necesitamos usar
+exactamente el mismo nombre que el que especificamos en urls
+(pk). ¡Omitir esta variable es incorrecto y resultará en un error!
+
+Ahora, queremos obtener solo un post. Para ello podemos usar querysets
+como este:
+
+@example
+Post.objects.get(pk=pk)
+@end example
+
+Pero este código tiene un problema. Si no hay ningún Post con esa
+clave primaria (pk), ¡tendremos un error muy feo!
+
+@image{images/does_not_exist2,6in,,Does not Exist}
+
+¡No queremos eso! Por suerte, Django tiene una función que se encarga
+de eso: get_object_or_404. En caso de que no haya ningún Post con el
+pk dado se mostrará una página mucho más agradable, Page Not Found
+404.
+
+@image{images/404_2,6in,,Page not Found}
+
+La buena noticia es que puedes crear tu propia página Page Not Found y
+diseñarla como desees. Pero por ahora no es tan importante, así que lo
+omitiremos.
+
+¡Es hora de agregar una view a nuestro archivo views.py!
+
+En blog/urls.py creamos un regla de URL denominada post_detail que
+hace referencia a una vista llamada view.post_detail. Esto significa
+que Django va a estar esperando una función llamada post_detail de
+vista en blog/views.py.
+
+Deberíamos abrir blog/views.py en el editor y añadir el siguiente
+código cerca de los otros import
+
+@example
+from django.shortcuts import render, get_object_or_404
+@end example
+
+Y al final del archivo agregamos nuestra view:
+
+@example
+def post_detail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    return render(request, 'blog/post_detail.html', {'post': post})
+@end example
+
+Sí. Es hora de actualizar la página: @url{http://127.0.0.1:8000/}.
+
+@image{images/post_list2,6in,,Post list}
+
+¡Funcionó! Pero, ¿qué pasa cuando haces click en un enlace en el
+título del post?
+
+
 
 
 
