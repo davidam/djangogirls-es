@@ -3626,7 +3626,7 @@ email serán los que escribiste anteriormente):
 
 @example
 Username: ola
-Email address: ola@example.com
+Email address: ola@@example.com
 Password:
 Password (again):
 Superuser created successfully.
@@ -3819,7 +3819,8 @@ Untracked files:
         mysite/
         requirements.txt
 
-nothing added to commit but untracked files present (use "git add" to track)
+nothing added to commit but untracked files present (use
+"git add" to track)
 @end example
 
 Y finalmente guardamos nuestros cambios. Ve a la consola y ejecuta
@@ -3834,6 +3835,106 @@ $ git commit -m "Mi aplicación Django Girls, primer commit"
  [...]
  create mode 100644 mysite/wsgi.py
 @end example
+
+@section Subiendo tu código a Github
+
+Vete a GitHub.com y regístrate para obtener una cuenta de usuario
+nueva y gratuita. (Si ya lo hiciste en la preparación del taller, ¡eso
+es genial!) Asegúrate de recordar tu contraseña (agrégala a tu
+administrador de contraseñas, si usas uno).
+
+A continuación, crea un nuevo repositorio con el nombre
+"my-first-blog". Deja el checkbox "initialize with a README" sin
+marcar, deja la opción de .gitignore vacía (ya lo hemos hecho
+manualmente) y deja la licencia como None.
+
+@image{images/new_github_repo,6in,,New Github Repository}
+
+Nota: El nombre my-first-blog es importante - podrías escoger otro,
+pero va a salir muchas veces en las instrucciones que vienen a
+continuación, y vas a tener que acordarte de cambiarlo cada vez. Lo
+más fácil es quedarse con el nombre my-first-blog.
+
+En la siguiente pantalla, verás la URL para clonar el repo, que
+tendrás que usar en los comandos que van a continuación:
+
+@image{images/github_get_repo_url_screenshot,6in,,My first blog}
+
+Ahora necesitas enlazar el repositorio Git en tu ordenador con el
+repositorio de GitHub.
+
+Escribe lo siguiente en la consola (cambia <your-github-username> por
+tu nombre de usuario de GitHub, pero sin los símbolos < y > -- fíjate
+en que la URL debería coincidir con la URL para clonar el repo que
+acabas de ver):
+
+@example
+$ git remote add origin
+  https://github.com/<your-github-username>/my-first-blog.git
+$ git push -u origin master
+@end example
+
+Cuando hagas push a GitHub, te preguntará tu usuario y password de
+GitHub, y después de introducirlos, deberías ver algo como esto:
+
+@example
+Counting objects: 6, done.
+Writing objects: 100% (6/6), 200 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/ola/my-first-blog.git
+
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+@end example
+
+Tu código ya está subido a GitHub. ¡Ve y compruébalo! Encontrarás que
+está en buena compañía - @url{https://www.djangoproject.com/, Django},
+@url{https://tutorial.djangogirls.org/es/, Django Girls Tutorial} y
+muchos otros proyectos de software libre están alojados en GitHub. :)
+
+@section Configurar nuestro blog en PythonAnywhere
+
+@subsection Crea una cuenta en PythonAnywhere
+
+Nota: A lo mejor ya has creado una cuenta en PythonAnywhere durante
+los pasos de instalación. Si es así, no necesitas hacerlo otra vez.
+
+PythonAnywhere es un servicio para ejecutar código Python en
+servidores "en la nube". Lo vamos a usar para alojar nuestro sitio
+para que esté disponible en Internet.
+
+Almacenaremos del blog que estamos construyendo sobre
+@url{https://www.pythonanywhere.com/, Python Anywhere}. Crea una
+cuenta como "Principiante/Beginner" en Python Anywhere (el modo
+gratuito está bien, no necesitas una tarjeta de crédito).
+
+@image{images/pythonanywhere_beginner_account_button,6in,,Plans and
+Pricing}
+
+Nota Cuando elijas un nombre de usuario, recuerda que la URL de tu
+blog tendrá la forma tunombredeusuario.pythonanywhere.com, así que lo
+mejor será usar tu apodo o elegir un nombre que indique de qué trata
+tu blog. Asegúrate también de recordar tu contraseña (añádela a tu
+gestor de contraseñas, si usas uno).
+
+@subsection Crear un token para la API de PythonAnywhere
+
+Este paso solo necesita ser completado una vez. Una vez que te hayas
+registrado en PythonAnywhere, serás llevado a tu tablón
+principal. Encontrarás el enlace a la página de tu "Cuenta" en la
+esquina superior derecha:
+
+Enlace de cuenta en la parte superior derecha de la página
+
+Después selecciona la lengueta llamada "API token", y haz click en el
+botón que dice "Crear nueva API token".
+
+@subsection Configurar nuestro sitio en PythonAnywhere
+
+Vuelve al @url{https://www.pythonanywhere.com/, dashboard de
+PythonAnywhere} haciendo click en el logo, y escoge la opción de
+iniciar una consola "Bash" – esta terminal es como la que hay en tu
+ordenador, pero en el servidor de PythonAnywhere.
 
 
 
