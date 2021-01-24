@@ -5812,9 +5812,107 @@ Sí. Es hora de actualizar la página: @url{http://127.0.0.1:8000/}.
 ¡Funcionó! Pero, ¿qué pasa cuando haces click en un enlace en el
 título del post?
 
+@image{images/template_does_not_exist,6in,,Template does not exist}
 
+¡Oh, no! ¡Otro error! Pero ya sabemos cómo lidiar con eso, ¿no?
+¡Tenemos que añadir una plantilla!
 
+@section Crear una plantilla para post detail
 
+Vamos crear un fichero en blog/templates/blog llamado
+post_detail.html, y abrirlo en el editor de código.
+
+Se verá así:
+
+@example
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endblock %}
+@end example
+
+Una vez más estamos extendiendo base.html. En el bloque content
+queremos mostrar la fecha de publicación (si existe), título y texto
+de nuestros posts. Pero deberíamos discutir algunas cosas importantes,
+¿cierto?
+
+{% if ... %} ... {% endif %} es un template tag que podemos usar
+cuando querramos ver algo. (Recuerdas if ... else .. del capítulo
+Intruducción a Python?) Ahora queremos mirar si la published_date de
+un post no esta vacía.
+
+Bien, podemos actualizar nuestra página y ver si TemplateDoesNotExist
+se ha ido.
+
+@image{images/post_detail2,6in,,Post detail}
+
+¡Yay! ¡Funciona!
+
+@section ¡Hora de despliegue!
+
+Sería bueno verificar que tu sitio web aún funcionará en
+PythonAnywhere, ¿cierto? Intentemos desplegar de nuevo.
+
+@example
+$ git status
+$ git add -A .
+$ git status
+$ git commit -m "Agregadas vistas y plantilla para el detalle del post del blog así como también CSS para el sitio."
+$ git push
+@end example
+
+Luego, en una consola Bash de PythonAnywhere:
+
+@example
+$ cd ~/<your-pythonanywhere-domain>.pythonanywhere.com
+$ git pull
+[...]
+@end example
+
+(Recuerda sustituir <your-pythonanywhere-domain> con tu subdominio de
+PythonAnywhere real, sin los paréntesis angulares.)
+
+@section Actualizar los ficheros estáticos (static files) en el servidor
+
+Normalmente, los servidores como PythonAnywhere tratan los ficheros
+estáticos (como los ficheros CSS) de manera diferente a los ficheros
+de Python. Se llaman estáticos porque el servidor no debe ejecutarlos,
+sino servirlos tal cual. Y por ello se tratan por separado para
+servirlos más rápido. Como consecuencia, si cambiamos nuestros
+ficheros CSS, tenemos que ejecutar un comando extra en el servidor
+para decirle que los actualice. Este comando se llama collectstatic.
+
+Activa el virtualenv si no estaba activado de antes (en PythonAnywhere
+se usa el comando workon, es igual que el comando source
+myenv/bin/activate que usamos en local):
+
+@example
+$ workon <your-pythonanywhere-domain>.pythonanywhere.com
+(ola.pythonanywhere.com)$ python manage.py collectstatic
+[...]
+@end example
+
+El comando manage.py collectstatic es un poco como el comando
+manage.py migrate. Hacemos cambios en nuestro código y luego le
+decimos a Django que los aplique, bien a la colección de ficheros
+estáticos o bien a la base de datos.
+
+En cualquier caso, ahora estaremos listos para saltar sobre la
+@url{https://www.pythonanywhere.com/web_app_setup/, página "Web"}
+(desde el botón del menú en el lado superior derecho de la consola),
+realizar la Recarga, y mirar en la página
+@url{https://subdomain.pythonanywhere.com} para ver el resultado.
+
+¡Y eso debería ser todo! Felicidades :)
 
 @node Index
 @unnumbered Index
