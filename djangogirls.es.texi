@@ -5914,6 +5914,188 @@ realizar la Recarga, y mirar en la página
 
 ¡Y eso debería ser todo! Felicidades :)
 
+@node Formularios de Django
+@chapter Formularios de Django
+@cindex Formularios de Django
+
+Lo último que haremos en nuestro sitio web será crear una forma
+agradable de agregar y editar posts en el blog. El admin de Django
+está bien, pero es bastante difícil de personalizar y hacerlo
+bonito. Con forms tendremos un poder absoluto sobre nuestra interfaz;
+¡podemos hacer casi cualquier cosa que podamos imaginar!
+
+Lo bueno de los formularios de Django es que podemos definirlos desde
+cero o crear un ModelForm, el cual guardará el resultado del
+formulario en el modelo.
+
+Esto es exactamente lo que queremos hacer: crearemos un formulario
+para nuestro modelo Post.
+
+Como cada parte importante de Django, los formularios tienen su propio
+archivo: forms.py.
+
+Necesitamos crear un archivo con este nombre en el directorio blog.
+
+@example
+blog
+   └── forms.py
+@end example
+
+Vale, ábrelo en el editor de código y teclea lo siguiente:
+
+@example
+from django import forms
+
+from .models import Post
+
+class PostForm(forms.ModelForm):
+
+    class Meta:
+        model = Post
+        fields = ('title', 'text',)
+@end example
+
+Lo primero, necesitamos importar Django forms (from django import
+forms) y nuestro modelo Post (from .models import Post).
+
+PostForm, como probablemente sospechas, es el nombre de nuestro
+formulario. Necesitamos decirle a Django que este formulario es un
+ModelForm (así Django hará algo de magia por nosotros) -
+forms.ModelForm es responsable de ello.
+
+Luego, tenemos class Meta, donde le decimos a Django qué modelo debe
+ser utilizado para crear este formulario (model = Post).
+
+Finalmente, podemos decir qué campo(s) deberían estar en nuestro
+formulario. En este escenario sólo queremos title y text para ser
+mostrados - author será la persona que está conectada (¡tú!) y
+created_date se definirá automáticamente cuando creemos un post (es
+decir, en el código), ¿cierto?
+
+¡Y eso es todo! Todo lo que necesitamos hacer ahora es usar el
+formulario en una view y mostrarla en una plantilla.
+
+Una vez más vamos a crear: un enlace a la página, una dirección URL,
+una vista y una plantilla.
+
+@section Enlace a una página con el formulario
+
+Ahora toca abrir el fichero blog/templates/blog/base.html en el
+editor. Vamos a añadir un enlace en el div llamado page-header:
+
+@example
+<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon
+glyphicon-plus"></span></a>
+@end example
+
+Ten en cuenta que queremos llamar a nuestra nueva vista post_new. La
+clase "glyphicon glyphicon-plus" es proporcionada por el tema de
+bootstrap que estamos utilizando, y nos mostrará un signo de suma.
+
+Después de agregar la línea, tu archivo html debería lucir de esta
+forma:
+
+@example
+{% load static %}
+<html>
+    <head>
+        <title>Django Girls blog</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+            <h1><a href="/">Django Girls Blog</a></h1>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% block content %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+@end example
+
+Después de guardar y refrescar la página @url{http://127.0.0.1:8000}
+verás el - ya conocido - error NoReverseMatch. ¿Es así? ¡Vamos bien!
+
+@section URL
+
+Abrimos blog/urls.py en el editor para añadir una línea:
+
+@example
+path('post/new', views.post_new, name='post_new'),
+@end example
+
+Y el código final tendrá este aspecto:
+
+@example
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.post_list, name='post_list'),
+    path('post/<int:pk>/', views.post_detail, name='post_detail'),
+    path('post/new/', views.post_new, name='post_new'),
+]
+@end example
+
+Después de actualizar el sitio, veremos un AttributeError, puesto que
+no tenemos la vista post_new implementada. Añadámosla de una vez.
+
+@section Vista post_new
+
+Ahora abre el fichero blog/views.py en el editor y añade estas líneas
+con el resto de imports from:
+
+@example
+from .forms import PostForm
+@end example
+
+Y ahora nuestra vista:
+
+@example
+def post_new(request):
+    form = PostForm()
+    return render(request, 'blog/post_edit.html', {'form': form})
+@end example
+
+Para crear un nuevo formulario Post, tenemos que llamar a PostForm() y
+pasarlo a la plantilla. Volveremos a esta vista pero, por ahora, vamos
+a crear rápidamente una plantilla para el formulario.
+
+@section Plantilla
+
+Tenemos que crear un fichero post_edit.html el el directorio
+blog/templates/blog, y abrirlo en el editor de código. Para hacer que
+un formulario funcione necesitamos varias cosas:
+
+@itemize @bullet
+@item
+Tenemos que mostrar el formulario. Podemos hacerlo, por ejemplo, con
+un sencillo {{ form.as_p }}.
+
+@item
+La línea anterior tiene que estar dentro de una etiqueta de formuLario
+HTML: <form method="POST">...</form>.
+
+@item
+Necesitamos un botón Guardar. Lo hacemos con un botón HTML: <button
+type='submit'>Save</button>.
+
+@item
+Finalmente justo después de abrir la etiqueta <form ...> tenemos que añadir {% csrf_token %}. ¡Esto es muy importante ya que hace que tus formularios sean seguros! Si olvidas este pedazo, Django se molestará cuando intentes guardar el formulario:
+
+@end itemize
+
+
+
 @node Index
 @unnumbered Index
 @printindex cp
