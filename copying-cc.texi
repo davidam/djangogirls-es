@@ -3,6 +3,9 @@ Tutorial de Django Girls (version @value{VERSION}, @value{UPDATED}).
 
 Copyright @copyright{} 2021 David Arroyo Men@'endez
 
+Puede descargar las fuentes de este documento de
+@uref{https://github.com/davidam/djangogirls-es/}.
+
 Este documento est@'a bajo una @uref{http://creativecommons.org/licenses/by-sa/3.0/es/deed.es, Licencia Creative Commons Atribución Compartir por Igual 3.0 España}
 
 @end copying
