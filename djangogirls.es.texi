@@ -6448,6 +6448,108 @@ superior derecha, encima de la consola) y haz click en Reload. Recarga
 tu @url{https://subdomain.pythonanywhere.com} blog para ver los cambios.  ¡Y
 eso debería ser todo! Felicidades :)
 
+@node ¿Y ahora qué?
+@chapter ¿Y ahora qué?
+@cindex ¿Y ahora qué?
+
+Date muchas felicitaciones. ¡Eres increíble! ¡Estamos orgullosas! <3
+
+@section ¿Qué hacer ahora?
+
+Toma un descanso y ¡relájate!. Acabas de hacer algo realmente grande.
+
+Después de eso, asegúrate de seguir a Django Girls en Facebook o Twitter para estar al día.
+
+@section ¿Me puedes recomendar recursos adicionales?
+
+¡ Sí! Hay un montón de recursos en línea para el aprendizaje de todas
+las clases de habilidades en programación – puede ser algo intimidante
+donde ir, pero lo tenemos cubierto. Cualquiera que fueran tus
+intereses antes de que vinieras a Django Girls, y los intereses que
+hayas desarrollado a lo largo del tutorial, aquí hay algunos recursos
+gratuitos (o recursos con grandes componentes libres) que puedes
+utilizar para llegar hasta donde quieras.
+
+@subsection Django
+
+@itemize @bullet
+@item
+En nuestro libro @url{https://tutorial-extensions.djangogirls.org/,
+Django Girls Tutorial: Extensions}
+
+@item
+@url{https://docs.djangoproject.com/en/2.2/intro/tutorial01/, El tutorial oficial de Django}
+
+@item
+@url{http://www.gettingstartedwithdjango.com/, Comienza a usar las lecciones en vídeo de Django}
+
+@end itemize
+
+@subsection HTML, CSS y JavaScript
+
+@itemize @bullet
+@item
+@url{https://www.codecademy.com/learn/paths/web-development, El curso de desarrollo web de Codeacademy}
+
+@item
+@url{https://www.freecodecamp.org/, FreeCodeCamp}
+
+@end itemize
+
+@subsection Python
+
+@itemize @bullet
+@item
+@url{https://www.codecademy.com/learn/learn-python, El curso de Python en Codeacademy}
+
+@item
+@url{https://developers.google.com/edu/python/, Curso de Python de Google}
+
+@item
+@url{http://learnpythonthehardway.org/book/, Learn Python The Hard Way
+book} – Los primeros ejercicios son gratuitos
+
+@item
+@url{http://newcoder.io/tutorials/, Nuevos tutoriales de Coder} - esta
+es una variedad de ejemplos prácticos de cómo puedes usar Python
+
+@item
+@url{https://www.edx.org/course?search_query=python, edX} – puedes
+auditar la mayoría de los cursos gratis, pero si deseas un certificado
+o créditos para una calificación de educación superior, entonces eso
+costará dinero
+
+@item
+@url{https://www.coursera.org/specializations/python, La
+especialización Python en Coursera} – algunas videoconferencias pueden
+ser auditadas gratuitamente y puedes ganar un certificado de Coursera
+tomando estos cursos
+
+@item
+@url{https://www.py4e.com/, Python for Everybody} - una versión libre
+y abierta de la especialización de Python en Coursera
+
+@end itemize
+
+@subsection Trabajar con datos
+
+@itemize @bullet
+@item
+@url{https://www.codecademy.com/learn/paths/data-science, Curso de ciencia de datos de Codecademy}
+
+@item
+@url{https://www.edx.org/course/?search_query=python&subject=Data%20Analysis%20%26%20Statistics,
+edX} – puedes auditar la mayoría de los cursos gratis, pero si desea
+un certificado o créditos para una calificación de educación superior,
+entonces eso costará dinero
+
+@item
+@url{https://www.dataquest.io/, Dataquest} – las primeras 30 "misiones" son gratuitas
+
+@end itemize
+
+
+¡No podemos esperar para ver lo que construyes a continuación!
 
 
 
