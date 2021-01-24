@@ -4295,6 +4295,160 @@ Obtenga más información sobre las vistas de Django leyendo la
 documentación oficial:
 @url{https://docs.djangoproject.com/en/2.2/topics/http/views/}
 
+@node Introducci@'on a HTML
+@chapter Introducci@'on a HTML
+@cindex Introducci@'on a HTML
+
+Te estarás preguntando, ¿qué es una plantilla?
+
+Una plantilla es un archivo que podemos reutilizar para presentar
+información diferente de forma consistente - por ejemplo, podrías
+utilizar una plantilla para ayudarte a escribir una carta, porque
+aunque cada carta puede contener un mensaje distinto y dirigirse a una
+persona diferente, compartirán el mismo formato.
+
+El formato de una plantilla de Django se describe en un lenguaje
+llamado HTML (el HTML que mencionamos en el primer capítulo Cómo
+funciona Internet).
+
+@section ¿Qué es HTML?
+
+HTML es un código simple que es interpretado por tu navegador web -
+como Chrome, Firefox o Safari - para mostrar una página web al
+usuario.
+
+HTML significa HyperText Markup Language - en español, Lenguaje de
+Marcas de HyperTexto. HyperText -hipertexto en español- significa que
+es un tipo de texto que soporta hipervínculos entre páginas. Markup
+significa que hemos tomado un documento y lo hemos marcado con código
+para decirle a algo (en este caso, un navegador) cómo interpretar la
+página. El código HTML está construido con etiquetas, cada una
+comenzando con < y terminando con >. Estas etiquetas representan
+elementos de marcado.
+
+@section ¡Tu primera plantilla!
+
+Crear una plantilla significa crear un archivo de plantilla. Todo es
+un archivo, ¿verdad? Probablemente hayas notado esto ya.
+
+Las plantillas se guardan en el directorio de blog/templates/blog. Así
+que primero crea un directorio llamado templates dentro de tu
+directorio blog. Luego crea otro directorio llamado blog dentro de tu
+directorio de templates:
+
+@example
+blog
+└───templates
+    └───blog
+@end example
+
+(Tal vez te estés preguntando por qué necesitamos dos directorios
+llamados blog – como verás más adelante, es una convención de nombres
+que nos facilitará la vida cuando las cosas se pongan más
+complicadas.)
+
+Y ahora crea un archivo post_list.html (déjalo en blanco por ahora)
+dentro de la carpeta blog/templates/blog.
+
+Mira cómo se ve su sitio web ahora: @url{http://127.0.0.1:8000/}
+
+Si todavía tienes un error TemplateDoesNotExist, intenta reiniciar tu
+servidor. Ve a la consola, para el servidor pulsando Ctrl+C (las
+teclas Control y C a la vez) y reinícialo ejecuntado el comando
+@example
+python manage.py runserver.
+@end example
+
+¡Ningún error más! Felicidades :) Sin embargo, por ahora, tu sitio web
+no está publicando nada excepto una página en blanco, porque la
+plantilla también está vacía. Tenemos que arreglarlo.
+
+Abre un fichero nuevo en el editor y escribe lo siguiente:
+
+@image{images/step1,6in,,step 1}
+
+@example
+<html>
+<body>
+    <p>Hi there!</p>
+    <p>It works!</p>
+</body>
+</html>
+@end example
+
+Ahora, ¿cómo luce tu sitio web? Haz clic para verlo: @url{http://127.0.0.1:8000/}
+
+@image{images/step3,6in,,step 3}
+
+¡Funcionó! Buen trabajo :)
+
+@itemize @bullet
+@item
+La etiqueta más básica, <html>, siempre va al inicio de cualquier
+página web y </html> va siempre al final. Como puedes ver, todo el
+contenido de la página web va desde el principio de la etiqueta <html
+> y hasta la etiqueta de cierre </html >
+
+@item
+<p> es una etiqueta para los elementos de párrafo; </p> cierra cada párrafo
+
+@end itemize
+
+@section Cabeza y cuerpo
+
+Cada página HTML también se divide en dos elementos: head y body.
+
+@itemize @bullet
+@item
+head es un elemento que contiene información sobre el documento que no
+se muestra en la pantalla.
+
+@item
+body es un elemento que contiene todo lo que se muestra como parte de
+la página web.
+
+@end itemize
+
+Usamos <head> para decirle el navegador acerca de la configuración de
+la página y <body> para decir lo que realmente está en la página.
+
+Por ejemplo, puedes ponerle un título a la página web dentro de la
+<head>, así:
+
+@example
+<html>
+    <head>
+        <title>Ola's blog</title>
+    </head>
+    <body>
+        <p>Hi there!</p>
+        <p>It works!</p>
+    </body>
+</html>
+@end example
+
+Guarda el archivo y actualiza tu página.
+
+¿Observas cómo el navegador ha comprendido que "Ola's blog" es el
+título de tu página? Ha interpretado <title>Ola's blog</title> y
+colocó el texto en la barra de título de tu navegador (también se
+utilizará para marcadores y así sucesivamente).
+
+Probablemente también hayas notado que cada etiqueta de apertura
+coincide con una etiqueta de cierre, con un /, y que los elementos son
+anidados (es decir, no puedes cerrar una etiqueta particular hasta que
+todos los que estaban en su interior se hayan cerrado también).
+
+Es como poner cosas en cajas. Tienes una caja grande, <html></html>;
+en su interior hay <body></body>, y que contiene las cajas aún más
+pequeñas: <p></p>.
+
+Tienes que seguir estas reglas de etiquetas de cierre y de anidación
+de elementos - si no lo haces, el navegador puede no ser capaz de
+interpretarlos apropiadamente y tu página se mostrará incorrectamente.
+
+
+
 
 @node Index
 @unnumbered Index
