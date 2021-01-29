@@ -169,18 +169,19 @@ nuevo issue con el idioma para que podamos añadirlo.
 
 @section Si est@'as haciendo el tutorial en casa
 
-Si estás haciendo el tutorial en casa, y no en uno de los eventos de
+Si est@'as haciendo el tutorial en casa, y no en uno de los eventos de
 Django Girls, puedes saltar este capítulo por completo e ir
-directamente al capítulo ¿cómo funciona Internet?.
+directamente al capítulo @ref{C@'omo funciona Internet}
 
 Esto es porque cubrimos las instalaciones de cosas a medida que se
-requieran en el tutorial -- esta es solamente una página adicional que
-reúne toda la información de instalación en un solo lugar (lo que es
-útil para algunos formatos de taller). Puedes escoger instalar todo lo
-que está en esta página ya mismo si lo deseas. Pero si quieres empezar
-a aprender cosas antes de instalar un grupo de materiales en tu
-computadora, salta este capítulo y te explicaremos las partes de la
-instalación luego, cuando sean necesarias.
+requieran en el tutorial -- esta es solamente una p@'agina adicional
+que re@'une toda la informaci@'on de instalaci@'on en un solo lugar
+(lo que es @'util para algunos formatos de taller). Puedes escoger
+instalar todo lo que est@'a en esta p@'agina ya mismo si lo
+deseas. Pero si quieres empezar a aprender cosas antes de instalar un
+grupo de materiales en tu computadora, salta este
+cap@'{@dotless{i}}tulo y te explicaremos las partes de la instalaci@'on
+luego, cuando sean necesarias.
 
 ¡Buena suerte!
 
@@ -969,9 +970,9 @@ personalizadas. :)
 
 Suficiente conversación - ¡tiempo de crear!
 
-@node Introducción a la l@'{@dotless{i}}nea de comandos
-@chapter Introducción a la l@'{@dotless{i}}nea de comandos
-@cindex Introducción a la l@'{@dotless{i}}nea de comandos
+@node Introducci@'on a la l@'{@dotless{i}}nea de comandos
+@chapter Introducci@'on a la l@'{@dotless{i}}nea de comandos
+@cindex Introducci@'on a la l@'{@dotless{i}}nea de comandos
 
 Para los lectores en casa: este capítulo puede verse en el vídeo Tu
 nuevo amigo: Línea de Comandos.
@@ -1429,15 +1430,14 @@ Parte de este capítulo se basa en tutoriales de
 @section La Consola de Python
 
 Los lectores en casa pueden acceder al siguiente v@'{@dotless{i}}deo
-de Youtube (@url{https://www.youtube.com/watch?v=MO63L4s-20U}) acerca
-de conceptos b@'asicos de Python: enteros, cadenas, listas, variables y
-errores cubre esta parte.
+de Youtube@footnote{https://www.youtube.com/watch?v=MO63L4s-20U}
+acerca de conceptos b@'asicos de Python: enteros, cadenas, listas,
+variables y errores cubre esta parte.
 
 Para empezar a jugar con Python, tenemos que abrir una línea de
 comandos en nuestra computadora. Deberías saber cómo hacerlo, pues lo
-aprendiste en el capítulo de
-@url{https://tutorial.djangogirls.org/es/intro_to_command_line/,
-Introducción a la Línea de Comandos}
+aprendiste en el capítulo @ref{Introducci@'on a la l@'{@dotless{i}}nea
+de comandos}
 
 Una vez que estés lista, sigue las instrucciones a continuación.
 
