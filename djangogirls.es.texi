@@ -192,17 +192,17 @@ Tu workshop puede tener una "fiesta de instalación" antes del workshop
 principal. Si estás en un equipo de instalación, ¡ésta página es para
 ti! Sigue las instrucciones aquí para obtener todo lo que tu necesitas
 para el workshop de instalación, con la ayuda de los entrenadores si
-lo necesitas. Entonces en el workshop principal, tu estarás preparado
+los necesitas. Entonces en el workshop principal, se te preparar@'a
 para saltar las instrucciones de instalación que encontrarás en el
 tutorial principal cuando llegues a ellos.
 
-Los organizadores del taller pueden pedirte que en casa intentes
-instalar todo en tu computadora antes de iniciar el taller. Si has
-estado preguntando cómo hacer esto, ¡esta página es para ti! Sigue las
-instrucciones aquí, lo mejor puedas. Así, en el taller principal,
-cuando estés en uno de los pasos de la instalación del tutorial, y si
-no tenías esa pieza instalada, puedes pedir ayuda a una de tus
-entrenadoras.
+Las personas que organizan el taller pueden pedirte que en casa
+intentes instalar todo en tu computadora antes de iniciar el
+taller. Si has estado preguntando cómo hacer esto, ¡esta página es
+para ti! Sigue las instrucciones aquí, lo mejor puedas. Así, en el
+taller principal, cuando estés en uno de los pasos de la instalación
+del tutorial, y si no tenías esa pieza instalada, puedes pedir ayuda a
+una de tus entrenadoras.
 
 Si tu taller no tiene una sesión de instalación (o no pudiste
 asistir), y si los organizadores no te piden que intentes instalar
@@ -706,38 +706,11 @@ de pip, el software que utilizamos para instalar Django:
 (myvenv) ~$ python -m pip install --upgrade pip
 @end example
 
-@subsection Instalar paquetes con un fichero de requisitos (requirements)
+@subsection Instalar Django con pip
 
-Un fichero de requisitos (requirements) tiene una lista de
-dependencias que se deben instalar mediante pip.
-
-Primero crea un archivo requirements.txt dentro de tu directorio
-djangogirls, usando el editor de código que instalaste previamente. Lo
-puedes hacer mediante abriendo un nuevo archivo en el editor de código
-y guardándolo como requirements.txt en el directorio djangogirls. Tu
-directorio se verá así:
-
-@verbatim
-djangogirls
-└───requirements.txt
-@end verbatim
-
-Dentro del fichero djangogirls/requirements.txt deberías tener el
-siguiente texto:
-
-@verbatim
-Django~=2.2.4
-@end verbatim
-
-Ahora, ejecuta pip install -r requirements.txt para instalar Django.
-
-@verbatim
-(myvenv) ~$ pip install -r requirements.txt
-Collecting Django~=2.2.4 (from -r requirements.txt (line 1))
-  Downloading Django-2.2.4-py3-none-any.whl (7.1MB)
-Installing collected packages: Django
-Successfully installed Django-2.2.4
-@end verbatim
+@example
+(myvenv) ~$ python -m pip Django
+@end example
 
 @subsection{Instalando Django: Windows}
 
@@ -755,9 +728,10 @@ rutas absolutas.)
 
 @subsection{Instalando Django: Windows 8 y Windows 10}
 
-@verbatim
-Tu línea de comando puede congelarse luego de intentar instalar Django. Si esto sucede, usa el siguiente comando:
+La línea de comandos puede quedarse colgada despu@'es de intentar
+instalar Django. Si esto sucede, usa el siguiente comando:
 
+@verbatim
     C:\Users\Name\djangogirls> python -m pip install -r requirements.txt
 @end verbatim
 
@@ -1119,11 +1093,11 @@ solamente escribiendo el comando, el cuál inicia después del prompt.
 
 Comencemos tecleando este comando:
 
-@subsection Your first command: OS X and Linux
+@subsection Tu primer comando: OS X and Linux
 
 $ whoami
 
-@subsection Your first command: Windows
+@subsection Tu primer comando: Windows
 
 Y luego presiona enter. Esto será nuestro resultado:
 
@@ -1144,7 +1118,7 @@ instrucciones para tu sistema operativo. Intentemos esto, ¿Verdad?
 Sería bueno saber dónde estamos ahora, ¿Correcto? Veamos. Escribe éste
 comando y presiona
 
-@subsection Current directory: OS X and Linux
+@subsection Directorio actual: OS X y Linux
 
 @example
 $ pwd
@@ -1153,7 +1127,7 @@ $ pwd
 
     Nota: 'pwd' es para imprimir el directorio de trabajo (print working directory).
 
-@subsection Current directory: Windows
+@subsection Directorio actual: Windows
 
 @example
 > cd 
@@ -1172,7 +1146,7 @@ principal.
 una ayuda que puedes leer! Por ejemplo, aprende más acerca de el
 comando del directorio actual:
 
-@subsection Command help: OS X and Linux
+@subsection Ayuda de comandos: OS X y Linux
 
 OS X y Linux tienen un comando man, el cual te da una ayuda en
 comandos. Intenta man pwd y ve qué dice, o coloca man antes de otro
@@ -1180,7 +1154,7 @@ comando para ver su ayuda. La salida de man nomalmentes es
 paginada. Usa la barra de espacio para moverte a la siguiente página,
 y q para salir de la ayuda.
 
-@subsection Command Help: Windows
+@subsection Ayuda de Comandos: Windows
 
 Añade un sufijo /? para más comandos que se imprimirán en la página de
 ayuda. Puedes hacer scroll a la ventana de comandos para verlos
