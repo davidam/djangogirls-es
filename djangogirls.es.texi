@@ -124,19 +124,12 @@ Tendr@'a (m@'as o menos) esta pinta:
 
 @image{images/application,6in,,Django Girls Blog}
 
-Si estás siguiendo este tutorial por tu cuenta y no tienes un mentor
-que te ayude en caso de dificultades, tenemos un chat para ti:
-Gitter. ¡Hemos pedido a mentores y asistentes de ediciones anteriores,
-que pasen por all@'{@dotless{i}} de vez en cuando para echar una mano
-a otras con el tutorial! ¡No tengas miedo de preguntar
-ah@'{@dotless{i}}!
-
-Si estás siguiendo este tutorial por tu cuenta y no tienes un mentor
+Si est@'as siguiendo este tutorial por tu cuenta y no tienes un mentor
 que te ayude en caso de dificultades, tenemos un chat para ti:
 @url{https://gitter.im/DjangoGirls/tutorial, Gitter}. ¡Hemos pedido a
-mentores y asistentes de ediciones anteriores, que pasen por allí de
-vez en cuando para echar una mano a otras con el tutorial! ¡No tengas
-miedo de preguntar ahí!
+mentores y asistentes de ediciones anteriores, que pasen por
+all@'{@dotless{i}} de vez en cuando para echar una mano a otras con el
+tutorial! ¡No tengas miedo de preguntar ah@'{@dotless{i}}!
 
 @section Seguir el tutorial desde casa
 
@@ -147,7 +140,7 @@ casa, estamos preparando v@'{@dotless{i}}deos que facilitar@'an seguir
 el tutorial por tu cuenta. Todav@'{@dotless{i}}a est@'a en progreso,
 pero cada vez hay m@'as cosas explicadas en el canal de YouTube
 @uref{https://www.youtube.com/channel/UC0hNd2uW8jTR5K3KBzRuG2A/feed,
-Coding is for girls} (Nota: en inglés).
+Coding is for girls} (Nota: en ingl@'es).
 
 En cada cap@'{@dotless{i}}tulo hay un enlace que lleva al
 v@'{@dotless{i}}deo correspondiente (si lo hay).
