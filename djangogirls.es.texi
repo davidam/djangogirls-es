@@ -1294,7 +1294,7 @@ Soluci@'on en Windows:
 
 @subsection Limpieza
 
-No queremos dejar un enredo, así que removamos todo lo que hicimos
+No queremos dejar un enredo, así que eliminemos todo lo que hicimos
 hasta este momento.
 
 Primero, necesitamos regresar al Escritorio:
@@ -1410,7 +1410,7 @@ Aquí está un resumen de algunos comandos útiles:
 Estos son solo algunos de los comandos que puedes ejecutar en tu línea
 de comando o consola, pero no usarás ninguno más por hoy.
 
-Si eres curios@, ss64.com contiene una referencia completa de comandos
+Si tienes curiosidad, ss64.com contiene una referencia completa de comandos
 para todos los sistemas operativos.
 
 @subsection ¿Lista? ¿Listo?
@@ -1428,10 +1428,10 @@ Parte de este capítulo se basa en tutoriales de
 
 @section La Consola de Python
 
-Para los lectores en casa:
-@url{https://www.youtube.com/watch?v=MO63L4s-20U, el vídeo conceptos
-básicos de Python: enteros, cadenas, listas, variables y errores} cubre
-esta parte.
+Los lectores en casa pueden acceder al siguiente v@'{@dotless{i}}deo
+de Youtube (@url{https://www.youtube.com/watch?v=MO63L4s-20U}) acerca
+de conceptos b@'asicos de Python: enteros, cadenas, listas, variables y
+errores cubre esta parte.
 
 Para empezar a jugar con Python, tenemos que abrir una línea de
 comandos en nuestra computadora. Deberías saber cómo hacerlo, pues lo
