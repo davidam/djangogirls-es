@@ -63,6 +63,25 @@ Este manual es acerca de Django (version @value{VERSION}, @value{UPDATED}).
 @chapter Introducci@'on
 @cindex Introducci@'on
 
+@section Nota del Editor
+
+El libro est@'a escrito en femenino, no totalmente, pero
+s@'{@dotless{i}} en multitud de ocasiones. Esto se debe a que el libro
+lo han desarrollado mujeres. Se ha decidido mantener este lenguaje
+para favorecer la inclusi@'on de las mujeres en el mundo de las
+tecnolog@'{@dotless{i}}as libres. Recordar que la equidad de g@'enero
+es un Objetivo de Desarrollo Sostenible (ODS) propuesto por Naciones
+Unidas.
+
+A pesar de estar escrito en femenino puede leerlo cualquiera sin tener
+que sentirse mujer, ni nada as@'{@dotless{i}}. Sino mejorando la
+empat@'{@dotless{i}}a con las mujeres que suelen recibir la doctrina
+contraria. Me refiero a que generalmente son ellas quienes sufren la
+exclusi@'on a trav@'es del lenguaje en masculino. Es posible, leer las
+recomendaciones de Naciones Unidas acerca de lenguaje inclusivo y no
+excluyente para ninguno de los dos
+g@'eneros@footnote{https://www.un.org/es/gender-inclusive-language/}.
+
 @section Bienvenida
 
 ¡Bienvenido/a al tutorial de las Django Girls! ¡Nos alegra que est@'es
@@ -2726,9 +2745,9 @@ empezar a crear algo con Django y ¡así aprenderemos las cosas
 importantes sobre la marcha!
 
 
-@node Instalacion de Django
-@chapter Instalacion de Django
-@cindex Instalacion de Django
+@node Instalaci@'on de Django
+@chapter Instalaci@'on de Django
+@cindex Instalaci@'on de Django
 
 
 Nota Si usas un Chromebook, omite este capítulo y asegúrate de seguir
