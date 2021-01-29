@@ -1002,9 +1002,9 @@ personalizadas. :)
 
 Suficiente conversación - ¡tiempo de crear!
 
-@node Introducción a la interfaz de línea de comandos
-@chapter Introducción a la interfaz de línea de comandos
-@cindex Introducción a la interfaz de línea de comandos
+@node Introducción a la l@'{@dotless{i}}nea de comandos
+@chapter Introducción a la l@'{@dotless{i}}nea de comandos
+@cindex Introducción a la l@'{@dotless{i}}nea de comandos
 
 Para los lectores en casa: este capítulo puede verse en el vídeo Tu
 nuevo amigo: Línea de Comandos.
@@ -2952,7 +2952,7 @@ El comando para instalar django con pip sería:
 @end example
 
 
-@section Instalar paquetes con un fichero de requisitos (requirements)
+@section Instalar paquetes con un fichero de requisitos
 
 Un fichero de requisitos (requirements) tiene una lista de
 dependencias que se deben instalar mediante
@@ -2994,16 +2994,16 @@ Successfully installed Django-2.2.4
 Si obtienes un error cuando llamas al pip en la plataforma de Windows,
 por favor verifica si el nombre de ruta de tu proyecto contiene
 espacios, acentos o caracteres especiales (por ejemplo,
-C:\Usuarios\NombreUsuario\djangogirls). Si los tiene, utiliza otro en
-su lugar sin espacios, acentos o caracteres especiales (sugerencia:
-C:\djangogirls). Crea un nuevo virtualenv en el nuevo directorio,
-luego borra el viejo y trata de escribir el comando anterior otra
-vez. (Moviendo el directorio virtualenv no funcionará debido a que usa
-rutas absolutas.)
+@code{C:\Usuarios\NombreUsuario\djangogirls}). Si los tiene, utiliza
+otro en su lugar sin espacios, acentos o caracteres especiales
+(sugerencia: @code{C:\djangogirls}). Crea un nuevo virtualenv en el nuevo
+directorio, luego borra el viejo y trata de escribir el comando
+anterior otra vez. (Moviendo el directorio virtualenv no funcionará
+debido a que usa rutas absolutas.)
 
 @subsection Instalando Django: Windows 8 y Windows 10
 
-Tu línea de comando puede congelarse luego de intentar instalar
+Tu l@'{@dotless{i}}nea de comando puede congelarse luego de intentar instalar
 Django. Si esto sucede, usa el siguiente comando:
 
 @example
