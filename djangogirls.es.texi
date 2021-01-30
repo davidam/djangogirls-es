@@ -3018,9 +3018,9 @@ importantes.
 
 Recuerda ejecutar todo en el virtualenv. Si no ves un prefijo (myvenv)
 en tu consola tienes que activar tu virtualenv. Explicamos cómo
-hacerlo en el capítulo de Instalación de Django en la sección Trabajar
-con virtualenv. Basta con escribir myvenv\Scripts\activate en Windows
-o source myvenv/bin/activate en Mac OS / Linux.
+hacerlo en el capítulo de @ref{Instalaci@'on de Django} en la sección
+Trabajar con virtualenv. Basta con escribir myvenv\Scripts\activate en
+Windows o source myvenv/bin/activate en Mac OS / Linux.
 
 @subsection Crear proyecto: OS X o Linux
 
@@ -5033,8 +5033,9 @@ Prueba esto en tu plantilla.
 @image{images/step2,6in,,step 2}
 
 ¡Funciona! Pero queremos que se muestren como los post estáticos que
-creamos anteriormente en el capítulo de Introducción a HTML. Usted
-puede mezclar HTML y etiquetas de plantilla. Nuestro body se verá así:
+creamos anteriormente en el capítulo de @ref{Introducci@'on a
+HTML}. Usted puede mezclar HTML y etiquetas de plantilla. Nuestro body
+se verá así:
 
 @example
 <div>
