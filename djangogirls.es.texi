@@ -1104,9 +1104,11 @@ Y luego presiona enter. Esto será nuestro resultado:
 
 $ whoami olasitarska
 
-Como puedes ver, el computador solo ha impreso tu nombre de usuario. Ordenado, ¿ah? :)
+Como puedes ver, el computador solo ha impreso tu nombre de
+usuario. Ordenado, ¿ah? :)
 
-    Intenta escribir cada comando; no copies y pegues. ¡De esta manera lo recordarás!
+    Intenta escribir cada comando; no copies y pegues. ¡De esta manera
+    lo recordarás!
 
 @section Fundamentos
 
@@ -1126,7 +1128,8 @@ $ pwd
 /Users/olasitarska
 @end example
 
-    Nota: 'pwd' es para imprimir el directorio de trabajo (print working directory).
+    Nota: 'pwd' es para imprimir el directorio de trabajo (print
+    working directory).
 
 @subsection Directorio actual: Windows
 
@@ -1135,7 +1138,8 @@ $ pwd
 C:\Users\olasitarska
 @end example
 
-    Nota: 'cd' es para cambiar de directorio (change directory). Con la consola tu puedes usar pwd solo con Linux o Mac OS X.
+    Nota: 'cd' es para cambiar de directorio (change directory). Con
+    la consola tu puedes usar pwd solo con Linux o Mac OS X.
 
 Probablemente veremos algo similar en tu computador. Una vez que abres
 la consola o la línea de comandos, usualmente inicias en tu directorio
@@ -1188,7 +1192,7 @@ Directory of C:\Users\olasitarska
 ...
 @end example
 
-Nota: En consola tu puedes usar también 'ls' como en Linux y Mac OS X. 
+Nota: En consola tu puedes usar también 'ls' como en Linux y Mac OS X.
 
 @section Cambiar el directorio actual
 
@@ -3248,8 +3252,8 @@ ejecutando el servidor web. Mientras el servidor web esté corriendo y
 esperando solicitudes adicionales, la terminal aceptará nuevo texto
 pero no ejecutará nuevos comandos.
 
-Miramos cómo funcionan los servidores web en el capítulo Cómo funciona
-internet.
+Miramos cómo funcionan los servidores web en el capítulo @ref{C@'omo
+funciona Internet}.
 
 Para escribir comandos adicionales mientras el servidor web está
 corriendo, abra una nueva ventana de terminal y active su virtualenv
@@ -4160,8 +4164,9 @@ urlpatterns = [
 ]
 @end example
 
-Ahora Django redirigirá todo lo que entre a '@url{http://127.0.0.1:8000/}'
-hacia blog.urls y buscará más instrucciones allí.
+Ahora Django redirigirá todo lo que entre a
+'@url{http://127.0.0.1:8000/}' hacia blog.urls y buscará más
+instrucciones allí.
 
 @section blog.urls
 
@@ -4366,7 +4371,8 @@ Abre un fichero nuevo en el editor y escribe lo siguiente:
 </html>
 @end example
 
-Ahora, ¿cómo luce tu sitio web? Haz clic para verlo: @url{http://127.0.0.1:8000/}
+Ahora, ¿cómo luce tu sitio web? Haz clic para verlo:
+@url{http://127.0.0.1:8000/}
 
 @image{images/step3,6in,,step 3}
 
@@ -4380,7 +4386,8 @@ contenido de la página web va desde el principio de la etiqueta <html
 > y hasta la etiqueta de cierre </html >
 
 @item
-<p> es una etiqueta para los elementos de párrafo; </p> cierra cada párrafo
+<p> es una etiqueta para los elementos de párrafo; </p> cierra cada
+párrafo.
 
 @end itemize
 
@@ -4462,13 +4469,15 @@ plantilla! Aquí hay algunas etiquetas útiles para eso:
 <strong>texto</strong> - pone en negrita tu texto
 
 @item
-<br> va en otra línea (no puedes poner nada dentro de br y no hay etiqueta de cierre)
+<br> va en otra línea (no puedes poner nada dentro de br y no hay
+etiqueta de cierre)
 
 @item
 <a href="https://djangogirls.org">link</a> - crea un vínculo
 
 @item
-<ul><li>primer elemento</li><li>segundo elemento</li></ul> - crea una lista, ¡igual que esta!
+<ul><li>primer elemento</li><li>segundo elemento</li></ul> - crea una
+lista, ¡igual que esta!
 
 @item
 <div></div> - define una sección de la página
@@ -4491,14 +4500,21 @@ blog/templates/blog/post_list.html:
         <div>
             <p>published: 14.06.2014, 12:14</p>
             <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia
+            quam venenatis vestibulum. Donec id elit non mi porta
+            gravida at eget metus. Fusce dapibus, tellus ac cursus
+            commodo, tortor mauris condimentum nibh, ut fermentum
+            massa justo sit amet risus.</p>
         </div>
 
         <div>
             <p>published: 14.06.2014, 12:14</p>
             <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </div>
+            <p>Aeneaneu leo quam. Pellentesque ornare sem lacinia quam
+            venenatis vestibulum. Donec id elit non mi porta gravida
+            at eget metus. Fusce dapibus, tellus ac cursus commodo,
+            tortor mauris condimentum nibh, ut f.</p>
+          </div>
     </body>
 </html>
 @end example
@@ -4507,7 +4523,8 @@ Aquí hemos creado tres secciones div.
 
 @itemize @bullet
 @item
-El primer elemento div contiene el título de nuestro blog - es un encabezado y un enlace
+El primer elemento div contiene el título de nuestro blog - es un
+encabezado y un enlace
 
 @item
 Otros dos elementos div contienen nuestras publicaciones (posts) del
@@ -4729,7 +4746,9 @@ Ahora, finalmente, podemos crear nuestra entrada:
 
 @example
 >>> Post.objects.all()
-<QuerySet [<Post: my post title>, <Post: another post title>, <Post: Sample title>]>
+<QuerySet [<Post: my post title>,
+          <Post: another post title>,
+          <Post: Sample title>]>
 @end example
 
 ¡Ahí está, una entrada de blog más en la lista!
@@ -4752,8 +4771,10 @@ aspecto:
 
 @example
 >>> Post.objects.filter(author=me)
-<QuerySet [<Post: Sample title>, <Post: Post number 2>, <Post: My 3rd
-post!>, <Post: 4th title of post>]>
+<QuerySet [<Post: Sample title>,
+          <Post: Post number 2>,
+          <Post: My 3rd post!>,
+          <Post: 4th title of post>]>
 @end example
 
 ¿O quizá queremos ver todas las entradas que contengan la palabra
@@ -4809,14 +4830,20 @@ objetos. Intentemos ordenarlos por el campo created_date:
 
 @example
 >>> Post.objects.order_by('created_date')
-<QuerySet [<Post: Sample title>, <Post: Post number 2>, <Post: My 3rd post!>, <Post: 4th title of post>]>
+<QuerySet [<Post: Sample title>,
+          <Post: Post number 2>,
+          <Post: My 3rd post!>,
+          <Post: 4th title of post>]>
 @end example
 
 También podemos invertir el orden agregando - al principio:
 
 @example
 >>> Post.objects.order_by('-created_date')
-<QuerySet [<Post: 4th title of post>,  <Post: My 3rd post!>, <Post: Post number 2>, <Post: Sample title>]>
+<QuerySet [<Post: 4th title of post>,
+          <Post: My 3rd post!>,
+          <Post: Post number 2>,
+          <Post: Sample title>]>
 @end example
 
 @section Consultas complejas a través de encadenamiento de métodos
@@ -4827,13 +4854,18 @@ devolverán un nuevo QuerySet. También puedes combinar QuerySets
 encadenando uno con otro:
 
 @example
->>> Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-<QuerySet [<Post: Post number 2>, <Post: My 3rd post!>, <Post: 4th title of post>, <Post: Sample title>]>
+>>> Post.objects.filter(
+    published_date__lte=timezone.now()).order_by('published_date')
+<QuerySet [<Post: Post number 2>,
+          <Post: My 3rd post!>,
+          <Post: 4th title of post>,
+          <Post: Sample title>]>
 @end example
 
 Es muy potente y te permite escribir consultas bastante complejas.
 
-¡Genial! ¡Ahora estás lista para la siguiente parte! Para cerrar la consola, escribe esto:
+¡Genial! ¡Ahora estás lista para la siguiente parte! Para cerrar la
+consola, escribe esto:
 
 @example
 >>> exit()
@@ -5031,7 +5063,9 @@ para convertir saltos de línea en párrafos.
 
 @section Una cosa más
 
-Sería bueno ver si tu sitio web seguirá funcionando en la Internet pública, ¿no? Vamos a intentar desplegar de nuevo en PythonAnywhere. Aquí va un resumen de los pasos…
+Sería bueno ver si tu sitio web seguirá funcionando en la Internet
+pública, ¿no? Vamos a intentar desplegar de nuevo en
+PythonAnywhere. Aquí va un resumen de los pasos…
 
 1. Lo primero, sube tu código a GitHub
 
@@ -5041,7 +5075,7 @@ $ git status
 $ git add --all .
 $ git status
 [...]
-$ git commit -m "Templates modificados para mostrar post desde base de datos."
+$ git commit -m "Templates modificados para mostrar post desde BBDD."
 [...]
 $ git push
 @end example
@@ -5112,8 +5146,11 @@ Para instalar Bootstrap, abre tu fichero .html en el editor de código
 y añade esto a la sección
 
 @example
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet"
+href="maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
+
+<link rel="stylesheet"
+href="maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.css">
 @end example
 
 Esto no añade ningún archivo a tu proyecto. Solo apunta a archivos que
@@ -5215,7 +5252,8 @@ elemento lo podrías identificar por su nombre de "tag" a, por su
 "class" external_link, o por su "id" link_to_wiki_page:
 
 @example
-<a href="https://en.wikipedia.org/wiki/Django" class="external_link" id="link_to_wiki_page">
+<a href="https://en.wikipedia.org/wiki/Django"
+class="external_link" id="link_to_wiki_page">
 @end example
 
 Si quieres aprender más sobre los selectores CSS puedes consultar en
@@ -5251,8 +5289,10 @@ Ahora tu archivo debe tener este aspecto:
 <html>
     <head>
         <title>Django Girls blog</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet"
+        href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet"
+        href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
@@ -5293,7 +5333,8 @@ Añade esto a tu CSS, guarda el archivo y ¡mira cómo funciona!
 la sección <head> del archivo blog/templates/blog/post_list.html:
 
 @example
-<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext"
+rel="stylesheet" type="text/css">
 @end example
 
 Como antes, revisa el orden y pon antes del enlace a
