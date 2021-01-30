@@ -76,10 +76,10 @@ Unidas.
 A pesar de estar escrito en femenino puede leerlo cualquiera sin tener
 que sentirse mujer, ni nada as@'{@dotless{i}}. Sino mejorando la
 empat@'{@dotless{i}}a con las mujeres que suelen recibir la doctrina
-contraria. Me refiero a que generalmente son ellas quienes sufren la
-exclusi@'on a trav@'es del lenguaje en masculino. Es posible, leer las
-recomendaciones de Naciones Unidas acerca de lenguaje inclusivo y no
-excluyente para ninguno de los dos
+contraria. Me refiero a que generalmente son las mujeres quienes
+sufren la exclusi@'on a trav@'es del lenguaje en masculino entre otras
+cosas. Es posible, leer las recomendaciones de Naciones Unidas acerca
+de lenguaje inclusivo y no excluyente para ninguno de los dos
 g@'eneros@footnote{https://www.un.org/es/gender-inclusive-language/}.
 
 @section Bienvenida
@@ -279,14 +279,14 @@ sistema. Si no lo encuentras allí, intenta buscarlo en Google. :)
 
 @section Instalar Python
 
-Para lectores en casa: este capitulo se cubre en el vídeo
-@uref{https://www.youtube.com/watch?v=pVTaqzKZCdA, Installing Python &
-Code Editor.}
+Para lectores en casa: este cap@'{@dotless{i}}tulo se cubre en el
+v@'{@dotless{i}}deo @uref{https://www.youtube.com/watch?v=pVTaqzKZCdA,
+Installing Python & Code Editor.}
 
-Esta sección está basada en un tutorial de
+Esta secci@'on est@'a basada en un tutorial de
 @uref{https://github.com/ggcarrots/django-carrots, Geek Girls Carrots}
 
-Django está escrito en Python. Necesitamos Python para hacer cualquier
+Django est@'a escrito en Python. Necesitamos Python para hacer cualquier
 cosa en Django. ¡Empecemos con instalarlo! Queremos que instales la
 última versión de Python 3, así que si tienes una versión anterior,
 necesitarás actualizarla. Si ya tienes la versión 3.4 o una superior,
@@ -1845,7 +1845,9 @@ Ahora, trata escribiendo el siguiente comando (intenta reemplazando
 con tu propia información):
 
 @example
->>> participant = {'name': 'Ola', 'country': 'Poland', 'favorite_numbers': [7, 42, 92]}
+>>> participant = {'name': 'Ola',
+                  'country': 'Poland',
+                  'favorite_numbers': [7, 42, 92]}
 @end example
 
 Con este comando, acabas de crear una variable llamada participant con
@@ -2114,14 +2116,15 @@ Para lectores en casa: este capítulo está cubierto en el vídeo Bases
 de Python: @url{https://www.youtube.com/watch?v=dOAg6QVAxyk, Guardando
 archivos y condicionales}.
 
-Hasta ahora hemos escrito todo nuestro código Python en el intérprete,
-lo cual nos limita a ingresar una línea de código a la
-vez. Normalmente los programas son guardados en archivos y son
-ejecutados por el intérprete o compilador de nuestro lenguaje de
-programación. Hasta ahora, hemos estado corriendo nuestros programas
-de a una línea por vez en el intérprete de Python. Necesitaremos más
-de una línea de código para las siguientes tareas, entonces
-necesitaremos hacer rápidamente lo que sigue:
+Hasta ahora hemos escrito todo nuestro código Python en el
+int@'erprete, lo cual nos limita a ingresar una l@'{@dotless{i}}nea de
+c@'odigo a la vez. Normalmente los programas son guardados en archivos
+y son ejecutados por el int@'erprete o compilador de nuestro lenguaje
+de programaci@'on. Hasta ahora, hemos estado corriendo nuestros
+programas de a una l@'{@dotless{i}}nea por vez en el int@'erprete de
+Python. Necesitaremos m@'as de una l@'{@dotless{i}}nea de c@'odigo para
+las siguientes tareas, entonces necesitaremos hacer r@'apidamente lo que
+sigue:
 
 @itemize @bullet
 @item
@@ -3038,13 +3041,14 @@ En Windows debes ejecutar el siguiente comando. (No olvides incluir el
 punto . al final):
 
 @example
-(myvenv) C:\Users\Name\djangogirls> django-admin.exe startproject mysite .
+(myvenv) C:\Users\Name\djangogirls>
+django-admin.exe startproject mysite .
 @end example
 
 El punto . es crucial porque le dice al script que instale Django en
 el directorio actual (para el cual el punto . sirve de abreviatura).
 
-Nota Cuando teclees los comandos de arriba, recuerda que sólo tienes
+Nota: Cuando teclees los comandos de arriba, recuerda que sólo tienes
 que escribir la parte que empieza por django-admin.exe. La parte de
 (myvenv) C:\Users\Name\djangogirls> que mostramos aquí es sólo un
 ejemplo del mensaje que aparecerá en tu línea de comandos.
@@ -3144,7 +3148,7 @@ Nota: si estas usando un Chromebook, añade esta linea al final del
 archivo settings.py: MESSAGE_STORAGE =
 'django.contrib.messages.storage.session.SessionStorage'
 
-Añade también .c9users.io a ALLOWED_HOSTS si estás usando cloud9.
+Añade también .c9users.io a ALLOWED_HOSTS si est@'as usando cloud9.
 
 @section Configurar una base de datos
 
@@ -3227,10 +3231,10 @@ http://127.0.0.1:8000/
 Si estás usando una Chromebook y Cloud9, haga clic en la URL de la
 ventana emergente que debería haber aparecido en la esquina superior
 derecha de la ventana de comandos donde se está ejecutando el servidor
-web. La URL se verá parecida a:
+web. La URL se parecer@'a a:
 
 @example
-https://<a bunch of letters and numbers>.vfs.cloud9.us-west-2.amazonaws.com
+https://<letters and numbers>.vfs.cloud9.us-west-2.amazonaws.com
 @end example
 
 ¡Enhorabuena! ¡Has creado tu primer sitio web y lo has iniciado usando
@@ -3725,7 +3729,7 @@ lo que llamamos un repositorio de código (abreviado "repo"). Vamos a
 crear uno para nuestro proyecto. Abre la consola y ejecuta los
 siguientes comandos en el directorio de djangogirls:
 
-Nota Comprueba en qué directorio estás ahora mismo (es decir, el
+Nota: Comprueba en qué directorio estás ahora mismo (es decir, el
 directorio de trabajo actual) con el comando pwd (OSX/Linux) o cd
 (Windows) antes de inicializar el repositorio. Deberías estar en la
 carpeta djangogirls.
@@ -3759,7 +3763,7 @@ db.sqlite3
 
 Y guárdalo como .gitignore en la carpeta "djangogirls".
 
-Nota ¡El punto al principio del nombre del archivo es importante! Si
+Nota: ¡El punto al principio del nombre del archivo es importante! Si
 tienes problemas para crearlo (a los Mac no les gusta que crees
 ficheros con un punto al principio del nombre usando el Finder por
 ejemplo), entonces usa la opción "Save As" o "Guardar como" de tu
@@ -3767,7 +3771,7 @@ editor, esto funcionará seguro. Asegúrate de no añadir .txt, .py, o
 ninguna otra extensión al nombre de fichero -- Git solo lo reconocerá
 si se llama exactamente .gitignore, sin nada más.
 
-Nota Uno de los archivos especificados en tu .gitignore es
+Nota: Uno de los archivos especificados en tu .gitignore es
 db.sqlite3. Ese fichero es tu base de datos local, donde se almacenan
 los usuarios y publicaciones de tu blog. Vamos a seguir las buenas
 prácticas de programación web: vamos a usar bases de datos separadas
@@ -3897,7 +3901,7 @@ gratuito está bien, no necesitas una tarjeta de crédito).
 @image{images/pythonanywhere_beginner_account_button,6in,,Plans and
 Pricing}
 
-Nota Cuando elijas un nombre de usuario, recuerda que la URL de tu
+Nota: Cuando elijas un nombre de usuario, recuerda que la URL de tu
 blog tendrá la forma tunombredeusuario.pythonanywhere.com, así que lo
 mejor será usar tu apodo o elegir un nombre que indique de qué trata
 tu blog. Asegúrate también de recordar tu contraseña (añádela a tu
@@ -3912,7 +3916,7 @@ esquina superior derecha:
 
 Enlace de cuenta en la parte superior derecha de la página
 
-Después selecciona la lengueta llamada "API token", y haz click en el
+Después selecciona la lengüeta llamada "API token", y haz click en el
 botón que dice "Crear nueva API token".
 
 @subsection Configurar nuestro sitio en PythonAnywhere
@@ -4760,7 +4764,7 @@ post!>, <Post: 4th title of post>]>
 <QuerySet [<Post: Sample title>, <Post: 4th title of post>]>
 @end example
 
-Nota Hay dos guiones bajos (_) entre title y contains. El ORM de
+Nota: Hay dos guiones bajos (_) entre title y contains. El ORM de
 Django utiliza esta sintaxis para separar los nombres de los campos
 ("title") de las operaciones o filtros ("contains"). Si sólo utilizas
 un guion bajo, obtendrás un error como "FieldError: Cannot resolve
